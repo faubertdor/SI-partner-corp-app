@@ -1,0 +1,29 @@
+<%= form_for(@officer) do |f| %>
+  <% if @officer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@officer.errors.count, "error") %> prohibited this officer from being saved:</h2>
+
+      <ul>
+      <% @officer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_legal_name %><br>
+    <%= f.text_field :full_legal_name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :corporate_personnel_id %><br>
+    <%= f.text_field :corporate_personnel_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

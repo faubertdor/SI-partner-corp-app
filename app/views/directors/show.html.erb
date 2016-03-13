@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full legal name:</strong>
+  <%= @director.full_legal_name %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @director.occupation %>
+</p>
+
+<p>
+  <strong>Corporate personnel:</strong>
+  <%= @director.corporate_personnel %>
+</p>
+
+<%= link_to 'Edit', edit_director_path(@director) %> |
+<%= link_to 'Back', directors_path %>

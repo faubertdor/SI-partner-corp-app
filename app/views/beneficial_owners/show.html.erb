@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full legal name:</strong>
+  <%= @beneficial_owner.full_legal_name %>
+</p>
+
+<p>
+  <strong>Citizenship:</strong>
+  <%= @beneficial_owner.citizenship %>
+</p>
+
+<p>
+  <strong>Ownership percentage:</strong>
+  <%= @beneficial_owner.ownership_percentage %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @beneficial_owner.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @beneficial_owner.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @beneficial_owner.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @beneficial_owner.country %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @beneficial_owner.zip_code %>
+</p>
+
+<p>
+  <strong>Corporate personnel:</strong>
+  <%= @beneficial_owner.corporate_personnel %>
+</p>
+
+<%= link_to 'Edit', edit_beneficial_owner_path(@beneficial_owner) %> |
+<%= link_to 'Back', beneficial_owners_path %>

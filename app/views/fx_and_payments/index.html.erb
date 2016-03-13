@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fx And Payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purpose</th>
+      <th>Currencies</th>
+      <th>Approx trade vol</th>
+      <th>Approx monthly nb</th>
+      <th>Approx annual vol</th>
+      <th>Countries trans to</th>
+      <th>Countries trans from</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fx_and_payments.each do |fx_and_payment| %>
+      <tr>
+        <td><%= fx_and_payment.purpose %></td>
+        <td><%= fx_and_payment.currencies %></td>
+        <td><%= fx_and_payment.approx_trade_vol %></td>
+        <td><%= fx_and_payment.approx_monthly_nb %></td>
+        <td><%= fx_and_payment.approx_annual_vol %></td>
+        <td><%= fx_and_payment.countries_trans_to %></td>
+        <td><%= fx_and_payment.countries_trans_from %></td>
+        <td><%= fx_and_payment.user %></td>
+        <td><%= link_to 'Show', fx_and_payment %></td>
+        <td><%= link_to 'Edit', edit_fx_and_payment_path(fx_and_payment) %></td>
+        <td><%= link_to 'Destroy', fx_and_payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fx and payment', new_fx_and_payment_path %>

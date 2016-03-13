@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full legal name:</strong>
+  <%= @authorized_representative.full_legal_name %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @authorized_representative.occupation %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @authorized_representative.title %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @authorized_representative.dob %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @authorized_representative.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @authorized_representative.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @authorized_representative.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @authorized_representative.country %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @authorized_representative.zip_code %>
+</p>
+
+<p>
+  <strong>Corporate personnel:</strong>
+  <%= @authorized_representative.corporate_personnel %>
+</p>
+
+<%= link_to 'Edit', edit_authorized_representative_path(@authorized_representative) %> |
+<%= link_to 'Back', authorized_representatives_path %>

@@ -1,0 +1,53 @@
+<%= form_for(@beneficial_owner) do |f| %>
+  <% if @beneficial_owner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@beneficial_owner.errors.count, "error") %> prohibited this beneficial_owner from being saved:</h2>
+
+      <ul>
+      <% @beneficial_owner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_legal_name %><br>
+    <%= f.text_field :full_legal_name %>
+  </div>
+  <div class="field">
+    <%= f.label :citizenship %><br>
+    <%= f.text_field :citizenship %>
+  </div>
+  <div class="field">
+    <%= f.label :ownership_percentage %><br>
+    <%= f.text_field :ownership_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :street_address %><br>
+    <%= f.text_field :street_address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code %><br>
+    <%= f.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :corporate_personnel_id %><br>
+    <%= f.text_field :corporate_personnel_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

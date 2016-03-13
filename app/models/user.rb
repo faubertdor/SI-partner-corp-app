@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
-  has_one :general_info, dependent: :destroy
+  has_one  :general_info, dependent: :destroy
+  has_one  :corporate_personnel, dependent: :destroy
+  has_one  :fx_and_payment, dependent: :destroy
+  has_many :politically_exposed_people, dependent: :destroy
+  has_many :signatories, dependent: :destroy
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

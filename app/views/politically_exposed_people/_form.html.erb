@@ -1,0 +1,41 @@
+<%= form_for(@politically_exposed_person) do |f| %>
+  <% if @politically_exposed_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@politically_exposed_person.errors.count, "error") %> prohibited this politically_exposed_person from being saved:</h2>
+
+      <ul>
+      <% @politically_exposed_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :position_held %><br>
+    <%= f.text_field :position_held %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br>
+    <%= f.date_select :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br>
+    <%= f.date_select :to %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

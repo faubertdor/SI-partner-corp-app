@@ -11,7 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313014552) do
+ActiveRecord::Schema.define(version: 20160313032301) do
+
+  create_table "authorized_representatives", force: :cascade do |t|
+    t.string   "full_legal_name"
+    t.string   "occupation"
+    t.string   "title"
+    t.date     "dob"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.integer  "corporate_personnel_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "authorized_representatives", ["corporate_personnel_id"], name: "index_authorized_representatives_on_corporate_personnel_id"
+
+  create_table "beneficial_owners", force: :cascade do |t|
+    t.string   "full_legal_name"
+    t.string   "citizenship"
+    t.decimal  "ownership_percentage"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.integer  "corporate_personnel_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "beneficial_owners", ["corporate_personnel_id"], name: "index_beneficial_owners_on_corporate_personnel_id"
+
+  create_table "corporate_personnels", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "no_ind_own_25_or_more"
+    t.boolean  "no_other_ind_own_25_or_more"
+    t.boolean  "owned_by_pub_trade"
+  end
+
+  add_index "corporate_personnels", ["user_id"], name: "index_corporate_personnels_on_user_id"
+
+  create_table "directors", force: :cascade do |t|
+    t.string   "full_legal_name"
+    t.string   "occupation"
+    t.integer  "corporate_personnel_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "directors", ["corporate_personnel_id"], name: "index_directors_on_corporate_personnel_id"
+
+  create_table "fx_and_payments", force: :cascade do |t|
+    t.string   "purpose"
+    t.string   "currencies"
+    t.integer  "approx_trade_vol"
+    t.integer  "approx_monthly_nb"
+    t.integer  "approx_annual_vol"
+    t.string   "countries_transf_to"
+    t.string   "countries_transf_from"
+    t.integer  "user_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "fx_and_payments", ["user_id"], name: "index_fx_and_payments_on_user_id"
 
   create_table "general_infos", force: :cascade do |t|
     t.string   "corporate_name"
@@ -41,6 +110,45 @@ ActiveRecord::Schema.define(version: 20160313014552) do
   end
 
   add_index "general_infos", ["user_id"], name: "index_general_infos_on_user_id"
+
+  create_table "officers", force: :cascade do |t|
+    t.string   "full_legal_name"
+    t.string   "title"
+    t.integer  "corporate_personnel_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "officers", ["corporate_personnel_id"], name: "index_officers_on_corporate_personnel_id"
+
+  create_table "politically_exposed_people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "position_held"
+    t.date     "from"
+    t.date     "to"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "politically_exposed_people", ["user_id"], name: "index_politically_exposed_people_on_user_id"
+
+  create_table "signatories", force: :cascade do |t|
+    t.string   "full_legal_name"
+    t.string   "title"
+    t.date     "dob"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "signatories", ["user_id"], name: "index_signatories_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

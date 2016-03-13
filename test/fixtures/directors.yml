@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_legal_name: MyString
+  occupation: MyString
+  corporate_personnel_id: 
+
+two:
+  full_legal_name: MyString
+  occupation: MyString
+  corporate_personnel_id: 

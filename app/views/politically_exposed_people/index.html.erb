@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Politically Exposed People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Position held</th>
+      <th>From</th>
+      <th>To</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @politically_exposed_people.each do |politically_exposed_person| %>
+      <tr>
+        <td><%= politically_exposed_person.name %></td>
+        <td><%= politically_exposed_person.title %></td>
+        <td><%= politically_exposed_person.position_held %></td>
+        <td><%= politically_exposed_person.from %></td>
+        <td><%= politically_exposed_person.to %></td>
+        <td><%= politically_exposed_person.user %></td>
+        <td><%= link_to 'Show', politically_exposed_person %></td>
+        <td><%= link_to 'Edit', edit_politically_exposed_person_path(politically_exposed_person) %></td>
+        <td><%= link_to 'Destroy', politically_exposed_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Politically exposed person', new_politically_exposed_person_path %>

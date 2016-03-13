@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beneficial Owners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full legal name</th>
+      <th>Citizenship</th>
+      <th>Ownership percentage</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Zip code</th>
+      <th>Corporate personnel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beneficial_owners.each do |beneficial_owner| %>
+      <tr>
+        <td><%= beneficial_owner.full_legal_name %></td>
+        <td><%= beneficial_owner.citizenship %></td>
+        <td><%= beneficial_owner.ownership_percentage %></td>
+        <td><%= beneficial_owner.street_address %></td>
+        <td><%= beneficial_owner.city %></td>
+        <td><%= beneficial_owner.state %></td>
+        <td><%= beneficial_owner.country %></td>
+        <td><%= beneficial_owner.zip_code %></td>
+        <td><%= beneficial_owner.corporate_personnel %></td>
+        <td><%= link_to 'Show', beneficial_owner %></td>
+        <td><%= link_to 'Edit', edit_beneficial_owner_path(beneficial_owner) %></td>
+        <td><%= link_to 'Destroy', beneficial_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beneficial owner', new_beneficial_owner_path %>

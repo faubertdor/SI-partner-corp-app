@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Corporate Personnels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corporate_personnels.each do |corporate_personnel| %>
+      <tr>
+        <td><%= link_to 'Show', corporate_personnel %></td>
+        <td><%= link_to 'Edit', edit_corporate_personnel_path(corporate_personnel) %></td>
+        <td><%= link_to 'Destroy', corporate_personnel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corporate personnel', new_corporate_personnel_path %>

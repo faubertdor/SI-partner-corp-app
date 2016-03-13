@@ -1,0 +1,2 @@
+module CorporatePersonnelsHelper
+end

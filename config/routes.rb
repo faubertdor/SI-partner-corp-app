@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :signatories
+  resources :fx_and_payments
+  resources :politically_exposed_people
+  resources :officers
+  resources :directors
+  resources :beneficial_owners
+  resources :authorized_representatives
   resources :general_infos
   root 'corporate_applications#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
