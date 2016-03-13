@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'corporate_applications#index'
+  get  'about'    => 'corporate_applications#about'
+  get  'help'     => 'corporate_applications#help'
+  
+  devise_scope :user do
+    get    'login'    => 'devise/sessions#new'
+    delete 'logout'   => 'devise/sessions#destroy'
+    get    'sign_up'  => 'devise/registrations#new'
+  end
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  
   resources :signatories
   resources :fx_and_payments
   resources :politically_exposed_people
@@ -7,10 +18,6 @@ Rails.application.routes.draw do
   resources :beneficial_owners
   resources :authorized_representatives
   resources :general_infos
-  root 'corporate_applications#index'
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-  get  'about' => 'corporate_applications#about'
-  get  'help'  => 'corporate_applications#help'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
