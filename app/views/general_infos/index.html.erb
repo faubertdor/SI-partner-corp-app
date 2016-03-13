@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing General Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Corporate name</th>
+      <th>Trade name</th>
+      <th>Country of inc</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip code</th>
+      <th>Country</th>
+      <th>Landline number</th>
+      <th>Cell number</th>
+      <th>Fax number</th>
+      <th>Email</th>
+      <th>State of inc</th>
+      <th>Registration number</th>
+      <th>Tax</th>
+      <th>Nature of business</th>
+      <th>Website</th>
+      <th>Money services business</th>
+      <th>Precious stones or metals</th>
+      <th>Travel or tour company</th>
+      <th>Public company</th>
+      <th>Public company</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @general_infos.each do |general_info| %>
+      <tr>
+        <td><%= general_info.corporate_name %></td>
+        <td><%= general_info.trade_name %></td>
+        <td><%= general_info.country_of_inc %></td>
+        <td><%= general_info.street_address %></td>
+        <td><%= general_info.city %></td>
+        <td><%= general_info.state %></td>
+        <td><%= general_info.zip_code %></td>
+        <td><%= general_info.country %></td>
+        <td><%= general_info.landline_number %></td>
+        <td><%= general_info.cell_number %></td>
+        <td><%= general_info.fax_number %></td>
+        <td><%= general_info.email %></td>
+        <td><%= general_info.state_of_inc %></td>
+        <td><%= general_info.registration_number %></td>
+        <td><%= general_info.tax_id %></td>
+        <td><%= general_info.nature_of_business %></td>
+        <td><%= general_info.website %></td>
+        <td><%= general_info.money_services_business %></td>
+        <td><%= general_info.precious_stones_or_metals %></td>
+        <td><%= general_info.travel_or_tour_company %></td>
+        <td><%= general_info.public_company %></td>
+        <td><%= general_info.public_company %></td>
+        <td><%= general_info.user %></td>
+        <td><%= link_to 'Show', general_info %></td>
+        <td><%= link_to 'Edit', edit_general_info_path(general_info) %></td>
+        <td><%= link_to 'Destroy', general_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New General info', new_general_info_path %>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :general_infos
+  root 'corporate_applications#index'
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  get  'about' => 'corporate_applications#about'
+  get  'help'  => 'corporate_applications#help'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
