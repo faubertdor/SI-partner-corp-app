@@ -1,12 +1,6 @@
 class GeneralInfosController < ApplicationController
   before_action :set_general_info, only: [:show, :edit, :update, :destroy]
 
-  # GET /general_infos
-  # GET /general_infos.json
-  def index
-    @general_infos = GeneralInfo.all
-  end
-
   # GET /general_infos/1
   # GET /general_infos/1.json
   def show
@@ -14,7 +8,11 @@ class GeneralInfosController < ApplicationController
 
   # GET /general_infos/new
   def new
-    @general_info = GeneralInfo.new
+    if current_user.general_info.nil?
+      @general_info = current_user.build_general_info
+    else
+      redirect_to current_user.general_info
+    end
   end
 
   # GET /general_infos/1/edit
@@ -24,11 +22,12 @@ class GeneralInfosController < ApplicationController
   # POST /general_infos
   # POST /general_infos.json
   def create
-    @general_info = GeneralInfo.new(general_info_params)
+    @general_info = current_user.build_general_info(general_info_params)
 
     respond_to do |format|
       if @general_info.save
-        format.html { redirect_to @general_info, notice: 'General info was successfully created.' }
+        format.html { redirect_to @general_info,
+                      notice: 'General information was successfully added.' }
         format.json { render :show, status: :created, location: @general_info }
       else
         format.html { render :new }
@@ -42,7 +41,8 @@ class GeneralInfosController < ApplicationController
   def update
     respond_to do |format|
       if @general_info.update(general_info_params)
-        format.html { redirect_to @general_info, notice: 'General info was successfully updated.' }
+        format.html { redirect_to @general_info,
+                      notice: 'General information was successfully updated.' }
         format.json { render :show, status: :ok, location: @general_info }
       else
         format.html { render :edit }
@@ -56,7 +56,8 @@ class GeneralInfosController < ApplicationController
   def destroy
     @general_info.destroy
     respond_to do |format|
-      format.html { redirect_to general_infos_url, notice: 'General info was successfully destroyed.' }
+      format.html { redirect_to general_infos_url,
+                    notice: 'General information was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +65,17 @@ class GeneralInfosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_general_info
-      @general_info = GeneralInfo.find(params[:id])
+      @general_info = current_user.general_info
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def general_info_params
-      params.require(:general_info).permit(:corporate_name, :trade_name, :country_of_inc, :street_address, :city, :state, :zip_code, :country, :landline_number, :cell_number, :fax_number, :email, :state_of_inc, :registration_number, :tax_id, :nature_of_business, :website, :money_services_business, :precious_stones_or_metals, :travel_or_tour_company, :public_company, :public_company, :user_id)
+      params.require(:general_info)
+            .permit(:corporate_name, :trade_name, :country_of_inc, :street_address,
+                    :city, :state, :zip_code, :country, :landline_number, :cell_number,
+                    :fax_number, :email, :state_of_inc, :registration_number, :tax_id,
+                    :nature_of_business, :website, :money_services_business,
+                    :precious_stones_or_metals, :travel_or_tour_company, :public_company,
+                    :public_company)
     end
 end

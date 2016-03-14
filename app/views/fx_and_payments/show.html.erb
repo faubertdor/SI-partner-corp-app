@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<h1>Foreign Exchange and Payment Needs</h1>
 <p>
   <strong>Purpose:</strong>
   <%= @fx_and_payment.purpose %>
@@ -27,18 +26,13 @@
 
 <p>
   <strong>Countries trans to:</strong>
-  <%= @fx_and_payment.countries_trans_to %>
+  <%= @fx_and_payment.countries_transf_to %>
 </p>
 
 <p>
   <strong>Countries trans from:</strong>
-  <%= @fx_and_payment.countries_trans_from %>
+  <%= @fx_and_payment.countries_transf_from %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @fx_and_payment.user %>
-</p>
-
+<%= link_to 'Back', politically_exposed_people_path %>
 <%= link_to 'Edit', edit_fx_and_payment_path(@fx_and_payment) %> |
-<%= link_to 'Back', fx_and_payments_path %>
+<%= link_to 'Next', signatories_path %>

@@ -4,7 +4,7 @@ class SignatoriesController < ApplicationController
   # GET /signatories
   # GET /signatories.json
   def index
-    @signatories = Signatory.all
+    @signatories = current_user.signatories.all
   end
 
   # GET /signatories/1
@@ -14,7 +14,7 @@ class SignatoriesController < ApplicationController
 
   # GET /signatories/new
   def new
-    @signatory = Signatory.new
+    @signatory = current_user.signatories.build
   end
 
   # GET /signatories/1/edit
@@ -24,11 +24,12 @@ class SignatoriesController < ApplicationController
   # POST /signatories
   # POST /signatories.json
   def create
-    @signatory = Signatory.new(signatory_params)
+    @signatory = current_user.signatories.build(signatory_params)
 
     respond_to do |format|
       if @signatory.save
-        format.html { redirect_to @signatory, notice: 'Signatory was successfully created.' }
+        format.html { redirect_to signatories_url,
+                      notice: 'Signatory was successfully created.' }
         format.json { render :show, status: :created, location: @signatory }
       else
         format.html { render :new }
@@ -42,7 +43,8 @@ class SignatoriesController < ApplicationController
   def update
     respond_to do |format|
       if @signatory.update(signatory_params)
-        format.html { redirect_to @signatory, notice: 'Signatory was successfully updated.' }
+        format.html { redirect_to signatories_url,
+                      notice: 'Signatory was successfully updated.' }
         format.json { render :show, status: :ok, location: @signatory }
       else
         format.html { render :edit }
@@ -56,7 +58,8 @@ class SignatoriesController < ApplicationController
   def destroy
     @signatory.destroy
     respond_to do |format|
-      format.html { redirect_to signatories_url, notice: 'Signatory was successfully destroyed.' }
+      format.html { redirect_to signatories_url,
+                    notice: 'Signatory was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +67,13 @@ class SignatoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_signatory
-      @signatory = Signatory.find(params[:id])
+      @signatory = current_user.signatories.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def signatory_params
-      params.require(:signatory).permit(:full_legal_name, :title, :dob, :street_address, :city, :state, :country, :zip_code, :user_id)
+      params.require(:signatory)
+            .permit(:full_legal_name, :title, :dob, :street_address,
+                    :city, :state, :country, :zip_code)
     end
 end

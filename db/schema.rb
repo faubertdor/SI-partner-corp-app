@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.string   "state"
     t.string   "country"
     t.string   "zip_code"
-    t.integer  "corporate_personnel_id"
+    t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "authorized_representatives", ["corporate_personnel_id"], name: "index_authorized_representatives_on_corporate_personnel_id"
+  add_index "authorized_representatives", ["user_id"], name: "index_authorized_representatives_on_user_id"
 
   create_table "beneficial_owners", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -39,33 +39,25 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.string   "state"
     t.string   "country"
     t.string   "zip_code"
-    t.integer  "corporate_personnel_id"
+    t.integer  "user_id"
+    t.boolean  "no_ind_own_25_or_more"
+    t.boolean  "no_other_own_25_or_more"
+    t.boolean  "owned_by_pub_trade"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "beneficial_owners", ["corporate_personnel_id"], name: "index_beneficial_owners_on_corporate_personnel_id"
-
-  create_table "corporate_personnels", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "no_ind_own_25_or_more"
-    t.boolean  "no_other_ind_own_25_or_more"
-    t.boolean  "owned_by_pub_trade"
-  end
-
-  add_index "corporate_personnels", ["user_id"], name: "index_corporate_personnels_on_user_id"
+  add_index "beneficial_owners", ["user_id"], name: "index_beneficial_owners_on_user_id"
 
   create_table "directors", force: :cascade do |t|
     t.string   "full_legal_name"
     t.string   "occupation"
-    t.integer  "corporate_personnel_id"
+    t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "directors", ["corporate_personnel_id"], name: "index_directors_on_corporate_personnel_id"
+  add_index "directors", ["user_id"], name: "index_directors_on_user_id"
 
   create_table "fx_and_payments", force: :cascade do |t|
     t.string   "purpose"
@@ -114,12 +106,12 @@ ActiveRecord::Schema.define(version: 20160313032301) do
   create_table "officers", force: :cascade do |t|
     t.string   "full_legal_name"
     t.string   "title"
-    t.integer  "corporate_personnel_id"
+    t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "officers", ["corporate_personnel_id"], name: "index_officers_on_corporate_personnel_id"
+  add_index "officers", ["user_id"], name: "index_officers_on_user_id"
 
   create_table "politically_exposed_people", force: :cascade do |t|
     t.string   "name"

@@ -1,12 +1,6 @@
 class OfficersController < ApplicationController
   before_action :set_officer, only: [:show, :edit, :update, :destroy]
 
-  # GET /officers
-  # GET /officers.json
-  def index
-    @officers = Officer.all
-  end
-
   # GET /officers/1
   # GET /officers/1.json
   def show
@@ -14,7 +8,7 @@ class OfficersController < ApplicationController
 
   # GET /officers/new
   def new
-    @officer = Officer.new
+    @officer = current_user.officers.build
   end
 
   # GET /officers/1/edit
@@ -24,11 +18,12 @@ class OfficersController < ApplicationController
   # POST /officers
   # POST /officers.json
   def create
-    @officer = Officer.new(officer_params)
+    @officer = current_user.officers.build(officer_params)
 
     respond_to do |format|
       if @officer.save
-        format.html { redirect_to @officer, notice: 'Officer was successfully created.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Officer was successfully created.' }
         format.json { render :show, status: :created, location: @officer }
       else
         format.html { render :new }
@@ -42,7 +37,8 @@ class OfficersController < ApplicationController
   def update
     respond_to do |format|
       if @officer.update(officer_params)
-        format.html { redirect_to @officer, notice: 'Officer was successfully updated.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Officer was successfully updated.' }
         format.json { render :show, status: :ok, location: @officer }
       else
         format.html { render :edit }
@@ -56,7 +52,8 @@ class OfficersController < ApplicationController
   def destroy
     @officer.destroy
     respond_to do |format|
-      format.html { redirect_to officers_url, notice: 'Officer was successfully destroyed.' }
+      format.html { redirect_to corporate_applications_personnel_url,
+                    notice: 'Officer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +61,11 @@ class OfficersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_officer
-      @officer = Officer.find(params[:id])
+      @officer = current_user.officers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def officer_params
-      params.require(:officer).permit(:full_legal_name, :title, :corporate_personnel_id)
+      params.require(:officer).permit(:full_legal_name, :title)
     end
 end

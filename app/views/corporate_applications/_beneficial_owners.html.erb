@@ -1,0 +1,36 @@
+<div>
+  <h2>Beneficial Owners</h2>
+  <%= link_to "Add new", new_beneficial_owner_path %>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Citizenship</th>
+      <th>Ownership percentage</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Zip Code</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @beneficial_owners.each do |bo| %>
+        <tr>
+          <td><%= bo.full_legal_name %></td>
+          <td><%= bo.citizenship %></td>
+          <td><%= bo.ownership_percentage %></td>
+          <td><%= bo.street_address %></td>
+          <td><%= bo.city %></td>
+          <td><%= bo.state %></td>
+          <td><%= bo.country %></td>
+          <td><%= bo.zip_code %></td>
+          <td>
+            <%= link_to "Edit", edit_beneficial_owner_path(bo) %>
+            <%= link_to "Delete", beneficial_owner_path(bo),
+                        method: :delete, data: { confirm: "Are you sure? " } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

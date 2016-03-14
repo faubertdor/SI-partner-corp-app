@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   has_one  :fx_and_payment, dependent: :destroy
   has_many :politically_exposed_people, dependent: :destroy
   has_many :signatories, dependent: :destroy
+  has_many :authorized_representatives, dependent: :destroy
+  has_many :beneficial_owners, dependent: :destroy
+  has_many :directors, dependent: :destroy
+  has_many :officers, dependent: :destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

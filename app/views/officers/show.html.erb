@@ -10,10 +10,6 @@
   <%= @officer.title %>
 </p>
 
-<p>
-  <strong>Corporate personnel:</strong>
-  <%= @officer.corporate_personnel %>
-</p>
-
 <%= link_to 'Edit', edit_officer_path(@officer) %> |
-<%= link_to 'Back', officers_path %>
+<%= link_to 'Add new', new_officer_path %> |
+<%= link_to 'Next', new_politically_exposed_person_path %>

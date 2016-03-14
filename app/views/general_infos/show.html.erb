@@ -105,15 +105,5 @@
   <%= @general_info.public_company %>
 </p>
 
-<p>
-  <strong>Public company:</strong>
-  <%= @general_info.public_company %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @general_info.user %>
-</p>
-
 <%= link_to 'Edit', edit_general_info_path(@general_info) %> |
-<%= link_to 'Back', general_infos_path %>
+<%= link_to 'Next', corporate_applications_personnel_path %>

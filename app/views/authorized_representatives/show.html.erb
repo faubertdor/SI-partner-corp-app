@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Full legal name:</strong>
   <%= @authorized_representative.full_legal_name %>
@@ -45,10 +43,6 @@
   <%= @authorized_representative.zip_code %>
 </p>
 
-<p>
-  <strong>Corporate personnel:</strong>
-  <%= @authorized_representative.corporate_personnel %>
-</p>
-
 <%= link_to 'Edit', edit_authorized_representative_path(@authorized_representative) %> |
-<%= link_to 'Back', authorized_representatives_path %>
+<%= link_to 'Add new', new_authorized_representative_path %> |
+<%= link_to 'Next', new_beneficial_owner_path %>

@@ -1,12 +1,6 @@
 class AuthorizedRepresentativesController < ApplicationController
   before_action :set_authorized_representative, only: [:show, :edit, :update, :destroy]
 
-  # GET /authorized_representatives
-  # GET /authorized_representatives.json
-  def index
-    @authorized_representatives = AuthorizedRepresentative.all
-  end
-
   # GET /authorized_representatives/1
   # GET /authorized_representatives/1.json
   def show
@@ -14,7 +8,7 @@ class AuthorizedRepresentativesController < ApplicationController
 
   # GET /authorized_representatives/new
   def new
-    @authorized_representative = AuthorizedRepresentative.new
+    @authorized_representative = current_user.authorized_representatives.build
   end
 
   # GET /authorized_representatives/1/edit
@@ -24,11 +18,13 @@ class AuthorizedRepresentativesController < ApplicationController
   # POST /authorized_representatives
   # POST /authorized_representatives.json
   def create
-    @authorized_representative = AuthorizedRepresentative.new(authorized_representative_params)
+    @authorized_representative = current_user.authorized_representatives
+                                             .build(authorized_representative_params)
 
     respond_to do |format|
       if @authorized_representative.save
-        format.html { redirect_to @authorized_representative, notice: 'Authorized representative was successfully created.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Authorized representative was successfully created.' }
         format.json { render :show, status: :created, location: @authorized_representative }
       else
         format.html { render :new }
@@ -42,7 +38,8 @@ class AuthorizedRepresentativesController < ApplicationController
   def update
     respond_to do |format|
       if @authorized_representative.update(authorized_representative_params)
-        format.html { redirect_to @authorized_representative, notice: 'Authorized representative was successfully updated.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Authorized representative was successfully updated.' }
         format.json { render :show, status: :ok, location: @authorized_representative }
       else
         format.html { render :edit }
@@ -56,7 +53,8 @@ class AuthorizedRepresentativesController < ApplicationController
   def destroy
     @authorized_representative.destroy
     respond_to do |format|
-      format.html { redirect_to authorized_representatives_url, notice: 'Authorized representative was successfully destroyed.' }
+      format.html { redirect_to corporate_applications_personnel_url,
+                    notice: 'Authorized representative was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +62,14 @@ class AuthorizedRepresentativesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_authorized_representative
-      @authorized_representative = AuthorizedRepresentative.find(params[:id])
+      @authorized_representative = current_user.authorized_representatives
+                                               .find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def authorized_representative_params
-      params.require(:authorized_representative).permit(:full_legal_name, :occupation, :title, :dob, :street_address, :city, :state, :country, :zip_code, :corporate_personnel_id)
+      params.require(:authorized_representative)
+            .permit(:full_legal_name, :occupation, :title, :dob, :street_address,
+                    :city, :state, :country, :zip_code)
     end
 end

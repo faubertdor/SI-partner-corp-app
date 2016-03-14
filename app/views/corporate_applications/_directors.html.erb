@@ -1,0 +1,24 @@
+<div>
+  <h2>Directors</h2>
+  <%= link_to "Add new", new_director_path %>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Occupation</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @directors.each do |director| %>
+        <tr>
+          <td><%= director.full_legal_name %></td>
+          <td><%= director.occupation %></td>
+          <td>
+            <%= link_to "Edit", edit_director_path(director) %>
+            <%= link_to "Delete", director_path(director),
+                        method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

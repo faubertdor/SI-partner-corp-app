@@ -1,3 +1,3 @@
 class Director < ActiveRecord::Base
-  belongs_to :corporate_personnel
+  belongs_to :user
 end

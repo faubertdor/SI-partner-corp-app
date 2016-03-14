@@ -1,12 +1,6 @@
 class DirectorsController < ApplicationController
   before_action :set_director, only: [:show, :edit, :update, :destroy]
 
-  # GET /directors
-  # GET /directors.json
-  def index
-    @directors = Director.all
-  end
-
   # GET /directors/1
   # GET /directors/1.json
   def show
@@ -14,7 +8,7 @@ class DirectorsController < ApplicationController
 
   # GET /directors/new
   def new
-    @director = Director.new
+    @director = current_user.directors.build
   end
 
   # GET /directors/1/edit
@@ -24,11 +18,12 @@ class DirectorsController < ApplicationController
   # POST /directors
   # POST /directors.json
   def create
-    @director = Director.new(director_params)
+    @director = current_user.directors.build(director_params)
 
     respond_to do |format|
       if @director.save
-        format.html { redirect_to @director, notice: 'Director was successfully created.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Director was successfully created.' }
         format.json { render :show, status: :created, location: @director }
       else
         format.html { render :new }
@@ -42,7 +37,8 @@ class DirectorsController < ApplicationController
   def update
     respond_to do |format|
       if @director.update(director_params)
-        format.html { redirect_to @director, notice: 'Director was successfully updated.' }
+        format.html { redirect_to corporate_applications_personnel_url,
+                      notice: 'Director was successfully updated.' }
         format.json { render :show, status: :ok, location: @director }
       else
         format.html { render :edit }
@@ -56,7 +52,8 @@ class DirectorsController < ApplicationController
   def destroy
     @director.destroy
     respond_to do |format|
-      format.html { redirect_to directors_url, notice: 'Director was successfully destroyed.' }
+      format.html { redirect_to corporate_applications_personnel_url,
+                    notice: 'Director was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +61,11 @@ class DirectorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_director
-      @director = Director.find(params[:id])
+      @director = current_user.directors.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def director_params
-      params.require(:director).permit(:full_legal_name, :occupation, :corporate_personnel_id)
+      params.require(:director).permit(:full_legal_name, :occupation)
     end
 end

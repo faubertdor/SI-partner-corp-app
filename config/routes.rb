@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'corporate_applications#index'
   get  'about'    => 'corporate_applications#about'
   get  'help'     => 'corporate_applications#help'
-  
+  get  'corporate_applications/personnel'
+  get  'corporate_applications/banking'
   devise_scope :user do
     get    'login'    => 'devise/sessions#new'
     delete 'logout'   => 'devise/sessions#destroy'

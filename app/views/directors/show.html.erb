@@ -10,10 +10,6 @@
   <%= @director.occupation %>
 </p>
 
-<p>
-  <strong>Corporate personnel:</strong>
-  <%= @director.corporate_personnel %>
-</p>
-
 <%= link_to 'Edit', edit_director_path(@director) %> |
-<%= link_to 'Back', directors_path %>
+<%= link_to 'Add new', new_director_path %> |
+<%= link_to 'Next', new_officer_path %>

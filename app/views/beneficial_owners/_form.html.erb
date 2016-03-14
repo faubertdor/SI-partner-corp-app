@@ -44,8 +44,16 @@
     <%= f.text_field :zip_code %>
   </div>
   <div class="field">
-    <%= f.label :corporate_personnel_id %><br>
-    <%= f.text_field :corporate_personnel_id %>
+    <%= f.label :no_ind_own_25_or_more %><br>
+    <%= f.check_box :no_ind_own_25_or_more %>
+  </div>
+  <div class="field">
+    <%= f.label :no_other_own_25_or_more %><br>
+    <%= f.check_box :no_other_own_25_or_more %>
+  </div>
+  <div class="field">
+    <%= f.label :owned_by_pub_trade %><br>
+    <%= f.check_box :owned_by_pub_trade %>
   </div>
   <div class="actions">
     <%= f.submit %>

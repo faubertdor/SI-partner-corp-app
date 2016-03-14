@@ -1,0 +1,24 @@
+<div>
+  <h2>Officers</h2>
+  <%= link_to "Add new", new_officer_path %>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @officers.each do |officer| %>
+        <tr>
+          <td><%= officer.full_legal_name %></td>
+          <td><%= officer.title %></td>
+          <td>
+            <%= link_to "Edit", edit_officer_path(officer) %>
+            <%= link_to "Delete", officer_path(officer),
+                        method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
