@@ -1,15 +1,6 @@
 <%= form_for(@politically_exposed_person) do |f| %>
-  <% if @politically_exposed_person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@politically_exposed_person.errors.count, "error") %> prohibited this politically_exposed_person from being saved:</h2>
-
-      <ul>
-      <% @politically_exposed_person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors',
+             locals: { model: @politically_exposed_person } %>
 
   <div class="field">
     <%= f.label :name %><br>

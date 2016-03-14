@@ -1,16 +1,6 @@
 <%= form_for(@authorized_representative) do |f| %>
-  <% if @authorized_representative.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@authorized_representative.errors.count, "error") %> prohibited this authorized_representative from being saved:</h2>
-
-      <ul>
-      <% @authorized_representative.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= render partial: 'shared/errors',
+             locals: { model: @authorized_representative } %>
   <div class="field">
     <%= f.label :full_legal_name %><br>
     <%= f.text_field :full_legal_name %>
