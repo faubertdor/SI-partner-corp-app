@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get  'help'     => 'corporate_applications#help'
   get  'corporate_applications/personnel'
   get  'corporate_applications/banking'
+  post 'corporate_applications/submit'
   devise_scope :user do
     get    'login'    => 'devise/sessions#new'
     delete 'logout'   => 'devise/sessions#destroy'

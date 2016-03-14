@@ -1,5 +1,5 @@
 <div>
-  <%= form_for(@banking_info, url: corporate_applications_banking_path) do |f| %>
+  <%= form_for(@banking_info, url: corporate_applications_submit_path) do |f| %>
     <div class="field">
       <%= f.label :bank_name %><br>
       <%= f.text_field :bank_name %>
@@ -36,8 +36,7 @@
     </div>
     
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Submit Application" %>
     </div>
   <% end %>
 </div>
-<h2>Account Information</h2>
