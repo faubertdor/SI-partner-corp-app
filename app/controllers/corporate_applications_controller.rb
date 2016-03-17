@@ -31,6 +31,7 @@ class CorporateApplicationsController < ApplicationController
     File.open(save_path, 'wb') do |file|
       file << pdf
     end
+    CorporateApplicationMailer.send_application(pdf).deliver_now
     redirect_to root_url
   end
     
