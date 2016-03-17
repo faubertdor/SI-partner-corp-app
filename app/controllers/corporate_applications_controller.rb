@@ -20,9 +20,7 @@ class CorporateApplicationsController < ApplicationController
     @officers = current_user.officers.all
   end
   
-  def banking
-    @banking_info = BankingInfo.new
-    @bank_account = BankAccount.new
+  def review
   end
   
   def submit

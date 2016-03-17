@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get  'about'    => 'corporate_applications#about'
   get  'help'     => 'corporate_applications#help'
   get  'corporate_applications/personnel'
-  get  'corporate_applications/banking'
+  get  'corporate_applications/review'
   post 'corporate_applications/submit'
   devise_scope :user do
     get    'login'    => 'devise/sessions#new'
