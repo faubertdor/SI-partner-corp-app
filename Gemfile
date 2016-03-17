@@ -34,6 +34,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'httparty', '~> 0.13.7'
 # Wrapper for HubSpot API
 gem 'hubspot-ruby', '~> 0.1.8'
+# Used to generate PDF to HTML
+gem 'wicked_pdf', '~> 1.0'
+# Used by wicked_pdf
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
