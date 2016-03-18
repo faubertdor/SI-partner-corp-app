@@ -28,7 +28,9 @@ class CorporateApplicationsController < ApplicationController
     corp_app_string = render_to_string(template: 'corporate_applications/_pdf_application.html.erb')
     pdf = WickedPdf.new.pdf_from_string(corp_app_string)
     CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Your application has been submitted.' }
+    end   
   end
     
   private
