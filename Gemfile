@@ -59,5 +59,9 @@ group :production do
   gem 'pg'
   # Required by Heroku for Rails app
   gem 'rails_12factor'
+  # Production web server used by Heroku
+  gem 'puma'
+  # Gzip compression to reduce their transfer size. Speeds up the app!
+  gem 'heroku-deflater'
 end
 

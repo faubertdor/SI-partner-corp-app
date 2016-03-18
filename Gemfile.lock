@@ -73,6 +73,8 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
+    heroku-deflater (0.6.2)
+      rack (>= 1.4.5)
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -129,6 +131,7 @@ GEM
       omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    puma (3.1.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -217,6 +220,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise (~> 3.5)
   foundation-rails (~> 6.1)
+  heroku-deflater
   httparty (~> 0.13.7)
   hubspot-ruby (~> 0.1.8)
   jbuilder (~> 2.0)
@@ -226,6 +230,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 0.4.0)
   omniauth-twitter (~> 1.2)
   pg
+  puma
   rails (= 4.2.5.2)
   rails_12factor
   sass-rails (~> 5.0)
