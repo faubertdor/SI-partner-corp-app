@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   get  'about'    => 'corporate_applications#about'
   get  'help'     => 'corporate_applications#help'
   get  'corporate_applications/personnel'
-  get  'corporate_applications/banking'
+  get  'corporate_applications/review'
+  post 'corporate_applications/submit'
   devise_scope :user do
     get    'login'    => 'devise/sessions#new'
     delete 'logout'   => 'devise/sessions#destroy'
     get    'sign_up'  => 'devise/registrations#new'
   end
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { omniauth_callbacks: "callbacks",
+                                       registrations: 'users/registrations'}
   
   resources :signatories
   resources :fx_and_payments

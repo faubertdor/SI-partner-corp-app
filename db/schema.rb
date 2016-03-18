@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313032301) do
+ActiveRecord::Schema.define(version: 20160318021535) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.string   "country"
     t.string   "zip_code"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "authorized_representatives", ["user_id"], name: "index_authorized_representatives_on_user_id"
@@ -43,18 +43,29 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.boolean  "no_ind_own_25_or_more"
     t.boolean  "no_other_own_25_or_more"
     t.boolean  "owned_by_pub_trade"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "beneficial_owners", ["user_id"], name: "index_beneficial_owners_on_user_id"
+
+  create_table "corporate_personnels", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "no_ind_own_25_or_more"
+    t.boolean  "no_other_ind_own_25_or_more"
+    t.boolean  "owned_by_pub_trade"
+  end
+
+  add_index "corporate_personnels", ["user_id"], name: "index_corporate_personnels_on_user_id"
 
   create_table "directors", force: :cascade do |t|
     t.string   "full_legal_name"
     t.string   "occupation"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "directors", ["user_id"], name: "index_directors_on_user_id"
@@ -107,8 +118,8 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.string   "full_legal_name"
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "officers", ["user_id"], name: "index_officers_on_user_id"
@@ -157,6 +168,9 @@ ActiveRecord::Schema.define(version: 20160313032301) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

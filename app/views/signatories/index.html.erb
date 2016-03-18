@@ -1,46 +1,5 @@
 <h1>Senior Officials</h1>
-<div>
-  <%= link_to 'Add new', new_signatory_path %>
-  <table>
-    <thead>
-      <tr>
-        <th>Full legal name</th>
-        <th>Title</th>
-        <th>Dob</th>
-        <th>Street address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Country</th>
-        <th>Zip code</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @signatories.each do |signatory| %>
-        <tr>
-          <td><%= signatory.full_legal_name %></td>
-          <td><%= signatory.title %></td>
-          <td><%= signatory.dob %></td>
-          <td><%= signatory.street_address %></td>
-          <td><%= signatory.city %></td>
-          <td><%= signatory.state %></td>
-          <td><%= signatory.country %></td>
-          <td><%= signatory.zip_code %></td>
-          <td>
-            <%= link_to 'Edit', edit_signatory_path(signatory) %>
-          </td>
-          <td>
-            <%= link_to 'Delete', signatory_path(signatory),
-                        method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br/>
-  
+  <%= render 'signatories/signatory' %>
   <%= link_to "Back", fx_and_payment_path(current_user.fx_and_payment) %> |
-  <%= link_to "Next", corporate_applications_banking_path %>
+  <%= link_to "Next", corporate_applications_review_path %>
 </div>

@@ -30,15 +30,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# For http request to HubSpot API
+gem 'httparty', '~> 0.13.7'
+# Wrapper for HubSpot API
+gem 'hubspot-ruby', '~> 0.1.8'
+# Used to generate PDF to HTML
+gem 'wicked_pdf', '~> 1.0'
+# Used by wicked_pdf
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,5 +59,9 @@ group :production do
   gem 'pg'
   # Required by Heroku for Rails app
   gem 'rails_12factor'
+  # Production web server used by Heroku
+  gem 'puma'
+  # Gzip compression to reduce their transfer size. Speeds up the app!
+  gem 'heroku-deflater'
 end
 

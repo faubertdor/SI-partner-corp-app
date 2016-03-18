@@ -1,15 +1,5 @@
 <%= form_for(@fx_and_payment) do |f| %>
-  <% if @fx_and_payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@fx_and_payment.errors.count, "error") %> prohibited this fx_and_payment from being saved:</h2>
-
-      <ul>
-      <% @fx_and_payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors', locals: { model: @fx_and_payment } %>
 
   <div class="field">
     <%= f.label :purpose %><br>

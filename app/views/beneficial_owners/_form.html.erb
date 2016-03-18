@@ -1,15 +1,6 @@
 <%= form_for(@beneficial_owner) do |f| %>
-  <% if @beneficial_owner.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@beneficial_owner.errors.count, "error") %> prohibited this beneficial_owner from being saved:</h2>
-
-      <ul>
-      <% @beneficial_owner.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors',
+             locals: { model: @beneficial_owner } %>
 
   <div class="field">
     <%= f.label :full_legal_name %><br>

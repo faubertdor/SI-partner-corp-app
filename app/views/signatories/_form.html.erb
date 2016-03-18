@@ -1,15 +1,5 @@
 <%= form_for(@signatory) do |f| %>
-  <% if @signatory.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@signatory.errors.count, "error") %> prohibited this signatory from being saved:</h2>
-
-      <ul>
-      <% @signatory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors', locals: { model: @signatory } %>
 
   <div class="field">
     <%= f.label :full_legal_name %><br>

@@ -1,15 +1,5 @@
 <%= form_for(@general_info) do |f| %>
-  <% if @general_info.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@general_info.errors.count, "error") %> prohibited this general_info from being saved:</h2>
-
-      <ul>
-      <% @general_info.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors', locals: { model: @general_info } %>
 
   <div class="field">
     <%= f.label :corporate_name %><br>

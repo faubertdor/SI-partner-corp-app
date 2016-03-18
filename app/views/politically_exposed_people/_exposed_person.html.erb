@@ -1,0 +1,32 @@
+<div>
+<%= link_to 'Add new', new_politically_exposed_person_path %>
+  <table>
+    <thead>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Position held</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Actions</th>
+    </thead>
+  
+    <tbody>
+      <% @politically_exposed_people.each do |person| %>
+        <tr>
+          <td><%= person.name %></td>
+          <td><%= person.title %></td>
+          <td><%= person.position_held %></td>
+          <td><%= person.from %></td>
+          <td><%= person.to %></td>
+          <td>
+            <%= link_to 'Edit', edit_politically_exposed_person_path(person) %>
+          </td>
+          <td>
+            <%= link_to 'Delete', politically_exposed_person_path(person),
+                          method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
