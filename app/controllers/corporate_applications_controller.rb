@@ -27,11 +27,7 @@ class CorporateApplicationsController < ApplicationController
   def submit
     corp_app_string = render_to_string(template: 'corporate_applications/_pdf_application.html.erb')
     pdf = WickedPdf.new.pdf_from_string(corp_app_string)
-    save_path = Rails.root.join('.','facypdf.pdf')
-    File.open(save_path, 'wb') do |file|
-      file << pdf
-    end
-    CorporateApplicationMailer.send_application(pdf).deliver_now
+    CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
     redirect_to root_url
   end
     

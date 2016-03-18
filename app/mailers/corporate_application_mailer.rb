@@ -5,14 +5,17 @@ class CorporateApplicationMailer < ApplicationMailer
   #
   #   en.corporate_application_mailer.send_application.subject
   #
-  def send_application(pdf)
-    recipients      "example@peoplehedge.com"
-    subject         "PeopleHedge Corporate Application"
-    from            "example@peoplehedge.com"
-    content_type    "multipart/alternative"
-    
-    attachment "application/pdf" do |a|
-      a.body = pdf
+  
+  # Send Complete Application to both PeopleHedge and the Customer
+  def send_application(user, pdf)
+    @user = user  
+    attachments["#{@user.id}-application.pdf"] = pdf
+    mail(from: 'example@peoplehedge.com',
+         to: [user.email, 'example@peoplehedge.com'],
+         subject: 'PeopleHedge Corporate Application') do |format|
+
+      format.html { render layout: 'layouts/corporate_application_mailer' }
+      format.text
     end
   end
 end
