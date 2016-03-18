@@ -14,7 +14,7 @@ class CorporateApplicationMailer < ApplicationMailer
          to: [user.email, 'example@peoplehedge.com'],
          subject: 'PeopleHedge Corporate Application') do |format|
 
-      format.html { render layout: 'layouts/corporate_application_mailer' }
+      format.html { render layout: 'layouts/mailer' }
       format.text
     end
   end
