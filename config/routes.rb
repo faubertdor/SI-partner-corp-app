@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     delete 'logout'   => 'devise/sessions#destroy'
     get    'sign_up'  => 'devise/registrations#new'
   end
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { omniauth_callbacks: "callbacks",
+                                       registrations: 'users/registrations'}
   
   resources :signatories
   resources :fx_and_payments
