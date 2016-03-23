@@ -1,17 +1,25 @@
-<%= form_for(@director) do |f| %>
-    <%= render partial: 'shared/errors',
-             locals: { model: @director } %>
-
-  <div class="field">
-    <%= f.label :full_legal_name %><br>
-    <%= f.text_field :full_legal_name %>
+<div class="row">
+  <div class="small-4 large-left columns">
+    <%= form_for(@director) do |f| %>
+        <%= render partial: 'shared/errors',
+                 locals: { model: @director } %>
+    
+      <div class="field">
+        <%= f.label :full_legal_name %><br>
+        <%= f.text_field :full_legal_name %>
+      </div>
+      <div class="field">
+        <%= f.label :occupation %><br>
+        <%= f.text_field :occupation %>
+      </div>
+    
+      <div class="actions">
+        <% if !@director.new_record? %>
+          <%= link_to 'Back', corporate_applications_personnel_path,
+              class: "button expand" %>
+        <% end %>
+        <%= f.submit class: "button expand" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

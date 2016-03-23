@@ -8,5 +8,6 @@
 <br/>
   <%= render 'officers' %>
 <br/>
-<%= link_to "Back", general_info_path(current_user.general_info) %> |
-<%= link_to "Next", politically_exposed_people_path %>
+<%= link_to "Back", general_info_path(current_user.general_info),
+            class: "button expand" %>
+<%= link_to "Next", politically_exposed_people_path, class: "button expand" %>

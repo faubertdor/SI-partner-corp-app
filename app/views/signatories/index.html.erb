@@ -1,5 +1,5 @@
 <h1>Senior Officials</h1>
   <%= render 'signatories/signatory' %>
-  <%= link_to "Back", fx_and_payment_path(current_user.fx_and_payment) %> |
-  <%= link_to "Next", corporate_applications_review_path %>
-</div>
+  <%= link_to "Back", fx_and_payment_path(current_user.fx_and_payment),
+              class: "button expand" %>
+  <%= link_to "Next", corporate_applications_review_path, class: "button expand" %>

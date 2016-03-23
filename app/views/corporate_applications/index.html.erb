@@ -1,8 +1,5 @@
-<h1>PeopleHedge Corporate Application</h1>
+<h1>Corporate Application</h1>
 
 <% if !user_signed_in? %>
-  Returning user <%= link_to "Log in", login_path %>
-  <br/>
   Start an application <%= link_to "Register", sign_up_path %>
 <% end %>
-

@@ -1,6 +1,17 @@
-<header>
-  <% if user_signed_in? %>
-    <%= "#{current_user.first_name} #{current_user.last_name}" %> |
-    <%= link_to "Logout", logout_path, method: :delete %>
-  <% end %>
-</header>
+<div class="row">
+  <header>
+    <nav class="top-bar fixed title-bar">
+      <span class="logo"><%= link_to "PeopleHedge", root_path %></span>
+      <div class="top-bar-right">
+        <ul class="menu">
+            <% if user_signed_in? %>
+              <li><%= link_to "Logout", logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Register", sign_up_path %></li>
+              <li><%= link_to "Log in", login_path %></li>
+            <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</div>
