@@ -1,0 +1,27 @@
+<div>
+  <h2>Part I - General Information</h2>
+  <%= render 'general_infos/infos' %>
+</div>
+
+<div>
+  <h2>Part II - Corporate Personnel</h2>
+    <%= render 'authorized_representatives_pdf' %>
+    <%= render 'beneficial_owners_pdf' %>
+    <%= render 'directors_pdf' %>
+    <%= render 'officers_pdf' %>
+</div>
+
+<div>
+  <h2>Part III - Politically Exposed Persons Determination</h2>
+  <%= render 'politically_exposed_people/exposed_person_pdf' %>
+</div>
+
+<div>
+  <h2>Part IV - Foreign Exchange and Payment Needs</h2>
+  <%= render 'fx_and_payments/fx_and_payments_needs' %>
+</div>
+
+<div>
+  <h2>Part V - Authorizations</h2>
+  <%= render 'signatories/signatory_pdf' %>
+</div>
