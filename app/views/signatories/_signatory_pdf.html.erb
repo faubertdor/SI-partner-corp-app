@@ -1,5 +1,4 @@
 <div class="row">
-  <%= link_to 'Add new', new_signatory_path, class: "button" %>
   <table>
     <thead>
       <tr>
@@ -11,7 +10,6 @@
         <th>State</th>
         <th>Country</th>
         <th>Zip code</th>
-        <th>Actions</th>
       </tr>
     </thead>
   
@@ -26,11 +24,6 @@
           <td><%= signatory.state %></td>
           <td><%= signatory.country %></td>
           <td><%= signatory.zip_code %></td>
-          <td>
-            <%= link_to 'Edit', edit_signatory_path(signatory) %><br/>
-            <%= link_to 'Delete', signatory_path(signatory),
-                        method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
         </tr>
       <% end %>
     </tbody>

@@ -1,6 +1,5 @@
 <div class="row">
   <h3>Beneficial Owners</h3>
-  <%= link_to "Add new", new_beneficial_owner_path, class: "button" %>
   <table>
     <thead>
       <th>Full legal name</th>
@@ -11,7 +10,6 @@
       <th>State</th>
       <th>Country</th>
       <th>Zip Code</th>
-      <th>Actions</th>
     </thead>
     <tbody>
       <% @beneficial_owners.each do |bo| %>
@@ -24,11 +22,6 @@
           <td><%= bo.state %></td>
           <td><%= bo.country %></td>
           <td><%= bo.zip_code %></td>
-          <td>
-            <%= link_to "Edit", edit_beneficial_owner_path(bo) %><br/>
-            <%= link_to "Delete", beneficial_owner_path(bo),
-                        method: :delete, data: { confirm: "Are you sure? " } %>
-          </td>
         </tr>
       <% end %>
     </tbody>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get  'corporate_applications/personnel'
   get  'corporate_applications/review'
   post 'corporate_applications/submit'
+  get  'corporate_applications/completed'
   devise_scope :user do
     get    'login'    => 'devise/sessions#new'
     delete 'logout'   => 'devise/sessions#destroy'

@@ -1,5 +1,4 @@
 <div class="row">
-<%= link_to 'Add new', new_politically_exposed_person_path, class: "button expand" %>
   <table>
     <thead>
         <th>Name</th>
@@ -7,7 +6,6 @@
         <th>Position held</th>
         <th>From</th>
         <th>To</th>
-        <th>Actions</th>
     </thead>
   
     <tbody>
@@ -18,11 +16,6 @@
           <td><%= person.position_held %></td>
           <td><%= person.from %></td>
           <td><%= person.to %></td>
-          <td>
-            <%= link_to 'Edit', edit_politically_exposed_person_path(person) %> </br>
-            <%= link_to 'Delete', politically_exposed_person_path(person),
-                          method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
         </tr>
       <% end %>
     </tbody>
