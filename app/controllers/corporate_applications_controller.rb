@@ -25,14 +25,24 @@ class CorporateApplicationsController < ApplicationController
   end
   
   def submit
-    corp_app_string = render_to_string(template: 'corporate_applications/_pdf_application.html.erb')
+    corp_app_string = render_to_string(template: 'corporate_applications/_application_pdf.html.erb')
     pdf = WickedPdf.new.pdf_from_string(corp_app_string)
     CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
+    @user = User.find_by(id: current_user.id)
+    @user.is_app_complete = true
+    @user.save
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Your application has been submitted.' }
+      format.html { redirect_to corporate_applications_completed_url,
+                    notice: 'Your application has been submitted.' }
     end   
   end
-    
+  
+  def completed
+    if current_user.is_app_complete == false
+      redirect_to comporate_applications_review_url
+    end
+  end
+  
   private
     def set_application_data
       @general_info = current_user.general_info

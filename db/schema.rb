@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318021535) do
+ActiveRecord::Schema.define(version: 20160324180118) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -48,6 +48,26 @@ ActiveRecord::Schema.define(version: 20160318021535) do
   end
 
   add_index "beneficial_owners", ["user_id"], name: "index_beneficial_owners_on_user_id"
+
+  create_table "corporate_informations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "trade_name"
+    t.string   "country"
+    t.string   "email"
+    t.string   "state"
+    t.string   "registration"
+    t.string   "tax_id"
+    t.string   "nature_of_business"
+    t.boolean  "money_services"
+    t.boolean  "in_precious_stones"
+    t.boolean  "travel_or_tour"
+    t.string   "public"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "corporate_informations", ["user_id"], name: "index_corporate_informations_on_user_id"
 
   create_table "corporate_personnels", force: :cascade do |t|
     t.integer  "user_id"
@@ -94,9 +114,9 @@ ActiveRecord::Schema.define(version: 20160318021535) do
     t.string   "state"
     t.string   "zip_code"
     t.string   "country"
-    t.integer  "landline_number"
-    t.integer  "cell_number"
-    t.integer  "fax_number"
+    t.string   "landline_number"
+    t.string   "cell_number"
+    t.string   "fax_number"
     t.string   "email"
     t.string   "state_of_inc"
     t.string   "registration_number"
@@ -154,23 +174,24 @@ ActiveRecord::Schema.define(version: 20160318021535) do
   add_index "signatories", ["user_id"], name: "index_signatories_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone_number"
+    t.boolean  "is_app_complete",        default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

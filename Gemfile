@@ -38,6 +38,8 @@ gem 'hubspot-ruby', '~> 0.1.8'
 gem 'wicked_pdf', '~> 1.0'
 # Used by wicked_pdf
 gem 'wkhtmltopdf-binary', '~> 0.9.9.3'
+# Used to validate phone numbers
+gem 'phony_rails', '~> 0.13.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,31 @@
+<div>
+  <h3>Authorized Representatives</h3>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Occupation</th>
+      <th>Title/Position</th>
+      <th>Date of Birth </th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Zip code</th>
+    </thead>
+    <tbody>
+      <% @authorized_reps.each do |rep| %>
+        <tr>
+          <td><%= rep.full_legal_name %></td>
+          <td><%= rep.occupation %></td>
+          <td><%= rep.title %></td>
+          <td><%= rep.dob %></td>
+          <td><%= rep.street_address %></td>
+          <td><%= rep.city %></td>
+          <td><%= rep.state %></td>
+          <td><%= rep.country %></td>
+          <td><%= rep.zip_code %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

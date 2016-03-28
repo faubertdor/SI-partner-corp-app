@@ -1,12 +1,8 @@
 <h1>Corporate Personnel</h1>
-<br/>
-  <%= render 'authorized_representatives' %>
-<br/>
-  <%= render 'beneficial_owners' %>
-<br/>
-  <%= render 'directors' %>
-<br/>
-  <%= render 'officers' %>
-<br/>
-<%= link_to "Back", general_info_path(current_user.general_info) %> |
-<%= link_to "Next", politically_exposed_people_path %>
+<%= render 'authorized_representatives' %>
+<%= render 'beneficial_owners' %>
+<%= render 'directors' %>
+<%= render 'officers' %>
+<%= link_to "Back", general_info_path(current_user.general_info),
+            class: "button expand" %>
+<%= link_to "Next", politically_exposed_people_path, class: "button expand" %>

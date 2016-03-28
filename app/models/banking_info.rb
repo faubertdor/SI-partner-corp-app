@@ -6,6 +6,7 @@ class BankingInfo
   # ACH, Wire, Draft, Check, Electronic_bill, Checkmatic, Reverse_wire_drawndown
   # Key pair with true or false value
   
+  
   def initialize(info = {})
     self.settlement_methods = Hash.new(0)
     self.accounts = [] # Each account is hash

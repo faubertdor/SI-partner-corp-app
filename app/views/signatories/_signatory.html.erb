@@ -1,11 +1,11 @@
 <div>
-  <%= link_to 'Add new', new_signatory_path %>
+  <%= link_to 'Add new', new_signatory_path, class: "button" %>
   <table>
     <thead>
       <tr>
         <th>Full legal name</th>
         <th>Title</th>
-        <th>Dob</th>
+        <th>Date of birth</th>
         <th>Street address</th>
         <th>City</th>
         <th>State</th>
@@ -27,9 +27,7 @@
           <td><%= signatory.country %></td>
           <td><%= signatory.zip_code %></td>
           <td>
-            <%= link_to 'Edit', edit_signatory_path(signatory) %>
-          </td>
-          <td>
+            <%= link_to 'Edit', edit_signatory_path(signatory) %><br/>
             <%= link_to 'Delete', signatory_path(signatory),
                         method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>

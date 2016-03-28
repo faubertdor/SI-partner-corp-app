@@ -1,52 +1,59 @@
-<%= form_for(@beneficial_owner) do |f| %>
-  <%= render partial: 'shared/errors',
-             locals: { model: @beneficial_owner } %>
-
-  <div class="field">
-    <%= f.label :full_legal_name %><br>
-    <%= f.text_field :full_legal_name %>
+<div class="row">
+  <div class="small-4 large-left columns">
+    <%= form_for(@beneficial_owner) do |f| %>
+      <%= render partial: 'shared/errors',
+                 locals: { model: @beneficial_owner } %>
+      <div class="field">
+        <%= f.label :no_ind_own_25_or_more %><br>
+        <%= f.check_box :no_ind_own_25_or_more %>
+      </div>
+      <div class="field">
+        <%= f.label :no_other_own_25_or_more %><br>
+        <%= f.check_box :no_other_own_25_or_more %>
+      </div>
+      <div class="field">
+        <%= f.label :owned_by_pub_trade %><br>
+        <%= f.check_box :owned_by_pub_trade %>
+      </div>
+      <div class="field">
+        <%= f.label :full_legal_name %><br>
+        <%= f.text_field :full_legal_name %>
+      </div>
+      <div class="field">
+        <%= f.label :citizenship %><br>
+        <%= f.text_field :citizenship %>
+      </div>
+      <div class="field">
+        <%= f.label :ownership_percentage %><br>
+        <%= f.text_field :ownership_percentage %>
+      </div>
+      <div class="field">
+        <%= f.label :street_address %><br>
+        <%= f.text_field :street_address %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state %>
+      </div>
+      <div class="field">
+        <%= f.label :country %><br>
+        <%= f.text_field :country %>
+      </div>
+      <div class="field">
+        <%= f.label :zip_code %><br>
+        <%= f.text_field :zip_code %>
+      </div>
+      <div class="actions">
+        <% if !@beneficial_owner.new_record? %>
+          <%= link_to 'Back', corporate_applications_personnel_path,
+              class: "button expand" %>
+        <% end %>
+        <%= f.submit class: "button expand" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :citizenship %><br>
-    <%= f.text_field :citizenship %>
-  </div>
-  <div class="field">
-    <%= f.label :ownership_percentage %><br>
-    <%= f.text_field :ownership_percentage %>
-  </div>
-  <div class="field">
-    <%= f.label :street_address %><br>
-    <%= f.text_field :street_address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :zip_code %><br>
-    <%= f.text_field :zip_code %>
-  </div>
-  <div class="field">
-    <%= f.label :no_ind_own_25_or_more %><br>
-    <%= f.check_box :no_ind_own_25_or_more %>
-  </div>
-  <div class="field">
-    <%= f.label :no_other_own_25_or_more %><br>
-    <%= f.check_box :no_other_own_25_or_more %>
-  </div>
-  <div class="field">
-    <%= f.label :owned_by_pub_trade %><br>
-    <%= f.check_box :owned_by_pub_trade %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

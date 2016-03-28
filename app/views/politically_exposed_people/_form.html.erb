@@ -1,28 +1,36 @@
-<%= form_for(@politically_exposed_person) do |f| %>
-  <%= render partial: 'shared/errors',
-             locals: { model: @politically_exposed_person } %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="small-4 large-left columns">
+    <%= form_for(@politically_exposed_person) do |f| %>
+      <%= render partial: 'shared/errors',
+                 locals: { model: @politically_exposed_person } %>
+    
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :position_held %><br>
+        <%= f.text_field :position_held %>
+      </div>
+      <div class="field">
+        <%= f.label :from %><br>
+        <%= f.date_select :from %>
+      </div>
+      <div class="field">
+        <%= f.label :to %><br>
+        <%= f.date_select :to %>
+      </div>
+      <div class="actions">
+        <% if !@politically_exposed_person.new_record? %>
+              <%= link_to 'Back', corporate_applications_personnel_path,
+                  class: "button expand" %>
+        <% end %>
+        <%= f.submit class: "button expand" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :position_held %><br>
-    <%= f.text_field :position_held %>
-  </div>
-  <div class="field">
-    <%= f.label :from %><br>
-    <%= f.date_select :from %>
-  </div>
-  <div class="field">
-    <%= f.label :to %><br>
-    <%= f.date_select :to %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

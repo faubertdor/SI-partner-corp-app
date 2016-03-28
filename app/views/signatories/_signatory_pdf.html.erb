@@ -1,0 +1,31 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Full legal name</th>
+        <th>Title</th>
+        <th>Date of birth</th>
+        <th>Street address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Zip code</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @signatories.each do |signatory| %>
+        <tr>
+          <td><%= signatory.full_legal_name %></td>
+          <td><%= signatory.title %></td>
+          <td><%= signatory.dob %></td>
+          <td><%= signatory.street_address %></td>
+          <td><%= signatory.city %></td>
+          <td><%= signatory.state %></td>
+          <td><%= signatory.country %></td>
+          <td><%= signatory.zip_code %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

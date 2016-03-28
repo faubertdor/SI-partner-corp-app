@@ -1,0 +1,17 @@
+<div>
+  <h3>Directors</h3>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Occupation</th>
+    </thead>
+    <tbody>
+      <% @directors.each do |director| %>
+        <tr>
+          <td><%= director.full_legal_name %></td>
+          <td><%= director.occupation %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

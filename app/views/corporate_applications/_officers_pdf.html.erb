@@ -1,0 +1,17 @@
+<div>
+  <h3>Officers</h3>
+  <table>
+    <thead>
+      <th>Full legal name</th>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      <% @officers.each do |officer| %>
+        <tr>
+          <td><%= officer.full_legal_name %></td>
+          <td><%= officer.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
