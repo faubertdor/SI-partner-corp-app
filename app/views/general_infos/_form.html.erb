@@ -1,100 +1,138 @@
-<div class="row">
-  <div class="small-4 large-left columns">
-    <%= form_for(@general_info) do |f| %>
-      <%= render partial: 'shared/errors', locals: { model: @general_info } %>
+<%= form_for(@general_info) do |f| %>
+  <%= render partial: 'shared/errors', locals: { model: @general_info } %>
     
-      <div class="field">
+    <div class="row">
+      <div class="field small-5 small-offset-1 column">
         <%= f.label :corporate_name %><br>
         <%= f.text_field :corporate_name %>
       </div>
-      <div class="field">
+
+      <div class="field small-5 column">
         <%= f.label :trade_name %><br>
         <%= f.text_field :trade_name %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :country_of_inc %><br>
         <%= f.text_field :country_of_inc %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :street_address %><br>
         <%= f.text_field :street_address %>
       </div>
-      <div class="field">
+
+      <div class="field small-3 column">
         <%= f.label :city %><br>
         <%= f.text_field :city %>
       </div>
-      <div class="field">
+
+      <div class="field small-1 column">
         <%= f.label :state %><br>
         <%= f.text_field :state %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-2 small-offset-1 column">
         <%= f.label :zip_code %><br>
         <%= f.text_field :zip_code %>
       </div>
-      <div class="field">
+
+      <div class="field small-4 column">
         <%= f.label :country %><br>
         <%= f.text_field :country %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-3 small-offset-1 column">
         <%= f.label :landline_number %><br>
         <%= f.text_field :landline_number %>
       </div>
-      <div class="field">
+
+      <div class="field small-3 column">
         <%= f.label :cell_number %><br>
         <%= f.text_field :cell_number %>
       </div>
-      <div class="field">
+
+      <div class="field small-3 column">
         <%= f.label :fax_number %><br>
         <%= f.text_field :fax_number %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :email %><br>
         <%= f.text_field :email %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :state_of_inc %><br>
         <%= f.text_field :state_of_inc %>
       </div>
-      <div class="field">
+
+      <div class="field small-4 column">
         <%= f.label :registration_number %><br>
         <%= f.text_field :registration_number %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :tax_id %><br>
         <%= f.text_field :tax_id %>
       </div>
-      <div class="field">
+
+      <div class="field small-4 column">
         <%= f.label :nature_of_business %><br>
         <%= f.text_field :nature_of_business %>
       </div>
-      <div class="field">
+    </div>
+
+    <div class="row">
+      <div class="field small-4 small-offset-1 column">
         <%= f.label :website %><br>
         <%= f.text_field :website %>
       </div>
-      <div class="field">
-        <%= f.label :money_services_business %><br>
-        <%= f.check_box :money_services_business %>
-      </div>
-      <div class="field">
-        <%= f.label :precious_stones_or_metals %><br>
-        <%= f.check_box :precious_stones_or_metals %>
-      </div>
-      <div class="field">
-        <%= f.label :travel_or_tour_company %><br>
-        <%= f.check_box :travel_or_tour_company %>
-      </div>
-      
-      <div class="field">
+
+      <div class="field small-4 column">
         <%= f.label :public_company %><br>
         <%= f.text_field :public_company %>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="field small-3 small-offset-1 column">
+        <%= f.label :money_services_business %><br>
+        <%= f.check_box :money_services_business %>
+      </div>
+
+      <div class="field small-3 column">
+        <%= f.label :precious_stones_or_metals %><br>
+        <%= f.check_box :precious_stones_or_metals %>
+      </div>
+
+      <div class="field small-3 column">
+        <%= f.label :travel_or_tour_company %><br>
+        <%= f.check_box :travel_or_tour_company %>
+      </div>
+    </div>
      
-      <div class="actions">
+    <div class="row">
+      <div class="actions small-4 small-offset-1 column">
         <% if !@general_info.new_record? %>
           <%= link_to 'Back', @general_info, class: "button expand" %>
         <% end %>
         <%= f.submit class: "button expand", class: "button expand" %>
       </div>
+    </div>
     <% end %>
-  </div>
-</div>
+  
