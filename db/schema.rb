@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324180118) do
+ActiveRecord::Schema.define(version: 20160331154230) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(version: 20160324180118) do
     t.string   "tax_id"
     t.string   "nature_of_business"
     t.string   "website"
-    t.boolean  "money_services_business"
     t.boolean  "precious_stones_or_metals"
     t.boolean  "travel_or_tour_company"
     t.string   "public_company"
