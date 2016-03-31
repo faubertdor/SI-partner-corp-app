@@ -1,8 +1,18 @@
-<h1>Corporate Personnel</h1>
+<div class="row">
+	<div class="small-8 small-offset-1 column">
+		<h1>Corporate Personnel</h1>
+	</div>
+</div>
+
 <%= render 'authorized_representatives' %>
 <%= render 'beneficial_owners' %>
 <%= render 'directors' %>
 <%= render 'officers' %>
-<%= link_to "Back", general_info_path(current_user.general_info),
-            class: "button expand" %>
-<%= link_to "Next", politically_exposed_people_path, class: "button expand" %>
+
+<div class="row">
+	<div class="small-4 small-offset-1 column">
+		<%= link_to "Back", general_info_path(current_user.general_info),
+		            class: "button expand" %>
+		<%= link_to "Next", politically_exposed_people_path, class: "button expand" %>
+	</div>
+</div>
