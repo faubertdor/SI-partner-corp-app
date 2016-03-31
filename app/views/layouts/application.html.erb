@@ -9,10 +9,10 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="main">
+  <body>
     <%= render 'layouts/header' %>
+    <%= render 'layouts/flash_messages' %>
     <div class="row">
-      <%= render 'layouts/flash_messages' %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
