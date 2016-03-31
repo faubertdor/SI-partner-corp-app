@@ -69,7 +69,7 @@ class AuthorizedRepresentativesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def authorized_representative_params
       params.require(:authorized_representative)
-            .permit(:full_legal_name, :occupation, :title, :dob, :street_address,
+            .permit(:full_legal_name, :email, :title, :dob, :street_address,
                     :city, :state, :country, :zip_code)
     end
 end

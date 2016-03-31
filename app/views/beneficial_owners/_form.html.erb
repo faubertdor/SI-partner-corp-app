@@ -4,15 +4,15 @@
       <%= render partial: 'shared/errors',
                  locals: { model: @beneficial_owner } %>
       <div class="field">
-        <%= f.label :no_ind_own_25_or_more %><br>
+        <%= f.label :no_individual_own_25_percent_or_more %><br>
         <%= f.check_box :no_ind_own_25_or_more %>
       </div>
       <div class="field">
-        <%= f.label :no_other_own_25_or_more %><br>
+        <%= f.label :no_other_individual_own_25_percent_or_more %><br>
         <%= f.check_box :no_other_own_25_or_more %>
       </div>
       <div class="field">
-        <%= f.label :owned_by_pub_trade %><br>
+        <%= f.label :owned_by_public_trade %><br>
         <%= f.check_box :owned_by_pub_trade %>
       </div>
       <div class="field">

@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331183704) do
+ActiveRecord::Schema.define(version: 20160331184847) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
-    t.string   "occupation"
     t.string   "title"
     t.date     "dob"
     t.string   "street_address"
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160331183704) do
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "email"
   end
 
   add_index "authorized_representatives", ["user_id"], name: "index_authorized_representatives_on_user_id"

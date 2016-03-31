@@ -1,10 +1,13 @@
 <div>
   <h3>Authorized Representatives</h3>
+  <p>
+     An individual who is authorized to book, negotiate and conclude the terms of a transaction 
+  </p>
   <%= link_to "Add new", new_authorized_representative_path, class: "button" %>
   <table>
     <thead>
       <th>Full legal name</th>
-      <th>Occupation</th>
+      <th>Email</th>
       <th>Title/Position</th>
       <th>Date of Birth </th>
       <th>Street address</th>
@@ -18,7 +21,7 @@
       <% @authorized_reps.each do |rep| %>
         <tr>
           <td><%= rep.full_legal_name %></td>
-          <td><%= rep.occupation %></td>
+          <td><%= rep.email %></td>
           <td><%= rep.title %></td>
           <td><%= rep.dob %></td>
           <td><%= rep.street_address %></td>
