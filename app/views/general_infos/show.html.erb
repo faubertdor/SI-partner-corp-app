@@ -1,14 +1,7 @@
-<div class="row">
-	<div class="small-6 small-offset-1 column">
-		<h1>General Information</h1>
-	</div>
-</div>
-
+<h1>General Information</h1>
 <%= render 'general_infos/infos' %>
 
-<div class="row">
-	<div class="small-4 small-offset-1 column">
-		<%= link_to 'Edit', edit_general_info_path(@general_info), class: "button expand" %>
-		<%= link_to 'Next', corporate_applications_personnel_path, class: "button expand" %>
-	</div>
+<div class="small-4 small-offset-1 column">
+	<%= link_to 'Edit', edit_general_info_path(@general_info), class: "button expand" %>
+	<%= link_to 'Next', corporate_applications_personnel_path, class: "button expand" %>
 </div>
