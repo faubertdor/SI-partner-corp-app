@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :fx_and_payments
   resources :politically_exposed_people
   resources :officers
-  resources :directors
   resources :beneficial_owners
   resources :authorized_representatives
   resources :general_infos

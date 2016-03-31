@@ -17,7 +17,6 @@ class CorporateApplicationsController < ApplicationController
   def personnel
     @authorized_reps = current_user.authorized_representatives.all
     @beneficial_owners = current_user.beneficial_owners.all
-    @directors = current_user.directors.all
     @officers = current_user.officers.all
   end
   
@@ -48,7 +47,6 @@ class CorporateApplicationsController < ApplicationController
       @general_info = current_user.general_info
       @authorized_reps = current_user.authorized_representatives.all
       @beneficial_owners = current_user.beneficial_owners.all
-      @directors = current_user.directors.all
       @officers = current_user.officers.all
       @politically_exposed_people = current_user.politically_exposed_people.all
       @fx_and_payment = current_user.fx_and_payment

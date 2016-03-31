@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331163242) do
+ActiveRecord::Schema.define(version: 20160331183704) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -80,16 +80,6 @@ ActiveRecord::Schema.define(version: 20160331163242) do
 
   add_index "corporate_personnels", ["user_id"], name: "index_corporate_personnels_on_user_id"
 
-  create_table "directors", force: :cascade do |t|
-    t.string   "full_legal_name"
-    t.string   "occupation"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "directors", ["user_id"], name: "index_directors_on_user_id"
-
   create_table "fx_and_payments", force: :cascade do |t|
     t.string   "purpose"
     t.string   "currencies"
@@ -122,8 +112,8 @@ ActiveRecord::Schema.define(version: 20160331163242) do
     t.string   "nature_of_business"
     t.string   "website"
     t.integer  "user_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   add_index "general_infos", ["user_id"], name: "index_general_infos_on_user_id"
