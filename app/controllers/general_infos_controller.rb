@@ -73,9 +73,6 @@ class GeneralInfosController < ApplicationController
       params.require(:general_info)
             .permit(:corporate_name, :trade_name, :country_of_inc, :street_address,
                     :city, :state, :zip_code, :country, :landline_number, :cell_number,
-                    :fax_number, :email, :state_of_inc, :registration_number, :tax_id,
-                    :nature_of_business, :website, :money_services_business,
-                    :precious_stones_or_metals, :travel_or_tour_company, :public_company,
-                    :public_company)
+                    :email, :state_of_inc, :tax_id, :nature_of_business, :website)
     end
 end

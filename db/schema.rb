@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331154230) do
+ActiveRecord::Schema.define(version: 20160331163242) do
 
   create_table "authorized_representatives", force: :cascade do |t|
     t.string   "full_legal_name"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20160331154230) do
   create_table "general_infos", force: :cascade do |t|
     t.string   "corporate_name"
     t.string   "trade_name"
-    t.string   "country_of_inc"
+    t.string   "country_of_inc",     default: "United States"
     t.string   "street_address"
     t.string   "city"
     t.string   "state"
@@ -116,19 +116,14 @@ ActiveRecord::Schema.define(version: 20160331154230) do
     t.string   "country"
     t.string   "landline_number"
     t.string   "cell_number"
-    t.string   "fax_number"
     t.string   "email"
     t.string   "state_of_inc"
-    t.string   "registration_number"
     t.string   "tax_id"
     t.string   "nature_of_business"
     t.string   "website"
-    t.boolean  "precious_stones_or_metals"
-    t.boolean  "travel_or_tour_company"
-    t.string   "public_company"
     t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   add_index "general_infos", ["user_id"], name: "index_general_infos_on_user_id"
