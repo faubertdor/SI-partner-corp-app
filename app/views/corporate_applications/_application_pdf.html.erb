@@ -7,7 +7,6 @@
   <h2>Part II - Corporate Personnel</h2>
     <%= render 'authorized_representatives_pdf' %>
     <%= render 'beneficial_owners_pdf' %>
-    <%= render 'directors_pdf' %>
     <%= render 'officers_pdf' %>
 </div>
 
@@ -23,5 +22,48 @@
 
 <div>
   <h2>Part V - Authorizations</h2>
-  <%= render 'signatories/signatory_pdf' %>
+</div>
+
+<div>
+  <h2>Part VI - Banking</h2>
+  <div class="field small-5 small-offset-1 column">
+   Bank Name:
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Name of Account Manager:
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Address of Bank Branch: <br/>
+   (including Street Address, City/Town, Province/State, Country, and Postal/Zip Code)
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Account Number:
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Transit: <br/>
+   ABA: <br/>
+   Fedwire: <br/>
+   Sort Code Number: <br/>
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Account Number:
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Transit: <br/>
+   ABA: <br/>
+   Fedwire: <br/>
+   Sort Code Number: <br/>
+  </div>
+  <div class="field small-5 small-offset-1 column">
+   Settlement Methods <br/>
+   DEFT/ACH: <br/>
+   Wire: <br/>
+   Draft: <br/>
+   Cheque/Check: <br/>
+   Electronic bill payment: <br/>
+   Checkmatic (US only): <br/>
+   Reverse wire drawdown (US only): <br/>
+   To ensure accuracy, please provide a void cheque/check for any CAD or USD
+   bank account that will be used.
+  </div>
 </div>

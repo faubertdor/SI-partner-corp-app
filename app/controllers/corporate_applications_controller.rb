@@ -1,6 +1,6 @@
 class CorporateApplicationsController < ApplicationController
   before_action :set_application_data, only: [:review, :submit]
-  skip_before_action :authenticate_user!, only: [:index, :about, :help]
+  skip_before_action :authenticate_user!, only: [:index, :about, :help, :completed]
     
   def index
     if user_signed_in?
@@ -40,6 +40,7 @@ class CorporateApplicationsController < ApplicationController
     if current_user.is_app_complete == false
       redirect_to comporate_applications_review_url
     end
+    sign_out current_user
   end
   
   private
@@ -50,6 +51,8 @@ class CorporateApplicationsController < ApplicationController
       @officers = current_user.officers.all
       @politically_exposed_people = current_user.politically_exposed_people.all
       @fx_and_payment = current_user.fx_and_payment
-      @signatories = current_user.signatories.all
+      if !current_user.authorized_representatives.all.nil?
+        @signatories = current_user.authorized_representatives.first
+      end
     end
 end

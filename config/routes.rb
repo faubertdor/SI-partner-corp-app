@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: "callbacks",
                                        registrations: 'users/registrations'}
   
-  resources :signatories
   resources :fx_and_payments
   resources :politically_exposed_people
   resources :officers
