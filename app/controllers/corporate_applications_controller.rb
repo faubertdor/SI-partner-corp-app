@@ -25,8 +25,7 @@ class CorporateApplicationsController < ApplicationController
   
   def submit
     corp_app_string = render_to_string(layout: 'layouts/pdf.html.erb',
-                                       template: 'corporate_applications/_application_pdf.html.erb',
-                                       header: { right: '[page] of [topage]' })
+                                       template: 'corporate_applications/_application_pdf.html.erb')
     pdf = WickedPdf.new.pdf_from_string(corp_app_string)
     CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
     @user = User.find_by(id: current_user.id)
