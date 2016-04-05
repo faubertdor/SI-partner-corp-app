@@ -28,6 +28,12 @@ class CorporateApplicationsController < ApplicationController
                                        template: 'corporate_applications/_application_pdf.html.erb')
     pdf = WickedPdf.new.pdf_from_string(corp_app_string)
     CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
+
+    # Test code below
+   # save_path = Rails.root.join('.','filename.pdf')
+   # File.open(save_path, 'wb') do |file|
+    #file << pdf
+   # end
     @user = User.find_by(id: current_user.id)
     @user.is_app_complete = true
     @user.save
