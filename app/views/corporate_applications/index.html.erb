@@ -1,4 +1,9 @@
-<h1>Corporate Application</h1>
+<div class="row">
+	<h1>Corporate Application</h1>
   <% if !user_signed_in? %>
-    Start an application <%= link_to "Register", sign_up_path %>
+   <h2>
+   		Start an application <%= link_to "Register", sign_up_path %>
+   		or <%= link_to "Login", login_path %>
+   </h2>
   <% end %>
+</div>

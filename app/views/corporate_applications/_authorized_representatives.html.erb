@@ -1,14 +1,12 @@
-<div>
-  <h3>Authorized Representatives</h3>
-  <p>
-     An individual who is authorized to book, negotiate and conclude the terms of a transaction 
-  </p>
-  <%= link_to "Add new", new_authorized_representative_path, class: "button" %>
-  <table>
+<div class="row">
+  <h2>Authorized Representatives </h2>
+  <p>An individual who is authorized to book, negotiate and conclude the terms of a transaction.</p>
+  <%= link_to "Add new", new_authorized_representative_path, class: "btn btn-primary" %>
+  <table class="table">
     <thead>
       <th>Full legal name</th>
       <th>Email</th>
-      <th>Title/Position</th>
+      <th>Position</th>
       <th>Date of Birth </th>
       <th>Street address</th>
       <th>City</th>

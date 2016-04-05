@@ -1,106 +1,61 @@
-<div class="row">  
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong>Corporate name:</strong>
-      <%= @general_info.corporate_name %>
-    </p>
-  </div>
+<div class="row">
+  <p>
+    <div class="col-md-4">
+      <strong>Corporate name:</strong> <%= @general_info.corporate_name %>
+    </div>
+    <div class="col-md-4">
+      <strong>Trade name:</strong> <%= @general_info.trade_name %>
+    </div>
+    <div class="col-md-4">
+      <strong> Country of Incorporation:</strong> <%= @general_info.country_of_inc %>
+    </div>
+  </p>
 
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong>Trade name:</strong>
-      <%= @general_info.trade_name %>
-    </p>
-  </div>
+  <p>
+    <div class="col-md-4">
+      <strong>Street address:</strong> <%= @general_info.street_address %>
+    </div>
+    <div class="col-md-4">
+      <strong>City:</strong> <%= @general_info.city %>
+    </div>
+    <div class="col-md-4">
+      <strong>State:</strong> <%= @general_info.state %>
+    </div>
+  </p>
 
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong> Country of Incorporation:</strong>
-      <%= @general_info.country_of_inc %>
-    </p>
-  </div>
+  <p>
+    <div class="col-md-4">
+      <strong>Zip code:</strong> <%= @general_info.zip_code %>
+    </div>
+    <div class="col-md-4">
+      <strong>Country:</strong> <%= @general_info.country %>
+    </div>
+    <div class="col-md-4">
+      <strong>Landline number:</strong> <%= @general_info.landline_number %>
+    </div>
+  </p>
 
-  <div class="small-5 small-offset-1 column">
-    <p>
-      <strong>Street address:</strong>
-      <%= @general_info.street_address %>
-    </p>
-  </div>
+  <p>
+    <div class="col-md-4">
+      <strong>Cell number:</strong> <%= @general_info.cell_number %>
+    </div>
+    <div class="col-md-4">
+      <strong>Email:</strong> <%= @general_info.email %>
+    </div>
+    <div class="col-md-4">
+      <strong>State of incorporation:</strong> <%= @general_info.state_of_inc %>
+    </div>
+  </p>
 
-  <div class="small-3 column">
-    <p>
-      <strong>City:</strong>
-      <%= @general_info.city %>
-    </p>
-  </div>
-
-  <div class="small-2 column">
-    <p>
-      <strong>State:</strong>
-      <%= @general_info.state %>
-    </p>
-  </div>
-
-  <div class="small-2 small-offset-1 column">
-    <p>
-      <strong>Zip code:</strong>
-      <%= @general_info.zip_code %>
-    </p>
-  </div>
-
-  <div class="small-3 column">
-    <p>
-      <strong>Country:</strong>
-      <%= @general_info.country %>
-    </p>
-  </div>
-
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong>Landline number:</strong>
-      <%= @general_info.landline_number %>
-    </p>
-  </div>
-
-  <div class="small-3 column">
-    <p>
-      <strong>Cell number:</strong>
-      <%= @general_info.cell_number %>
-    </p>
-  </div>
-
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong>Email:</strong>
-      <%= @general_info.email %>
-    </p>
-  </div>
-
-  <div class="small-3 small-offset-1 column">
-    <p>
-      <strong>State of incorporation:</strong>
-      <%= @general_info.state_of_inc %>
-    </p>
-  </div>
-
-  <div class="small-3 small-offset-1 column">
-    <p>
-      <strong>US Tax ID:</strong>
-      <%= @general_info.tax_id %>
-    </p>
-  </div>
-
-  <div class="small-5 column">
-    <p>
-      <strong>Nature of business:</strong>
-      <%= @general_info.nature_of_business %>
-    </p>
-  </div>
-
-  <div class="small-4 small-offset-1 column">
-    <p>
-      <strong>Website:</strong>
-      <%= @general_info.website %>
-    </p>
-  </div>
+  <p>
+    <div class="col-md-4">
+      <strong>US Tax ID:</strong> <%= @general_info.tax_id %>
+    </div>
+    <div class="col-md-4">
+      <strong>Nature of business:</strong> <%= @general_info.nature_of_business %>
+    </div>
+    <div class="col-md-4">
+      <strong>Website:</strong> <%= @general_info.website %>
+    </div>
+  </p>
 </div>
