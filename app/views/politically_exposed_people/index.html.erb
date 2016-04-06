@@ -1,6 +1,16 @@
-<h1>Politically Exposed People</h1>
-<%= render 'exposed_person' %>
-<%= link_to "Back", corporate_applications_personnel_path,
-            class: "button expand" %>
-<%= link_to "Next", new_fx_and_payment_path, class: "button expand" %>
+<div class="row">
+	<h2 class="jumbotron">Part III - Politically Exposed People</h2>
 </div>
+
+<p class="row">
+ Are any Corporate Personnel (Part II), their family members or close associates, 
+ a person who is or was entrusted with a prominent public function (i.e.government, military or judiciary)? 
+ If yes, please provide details below.
+</p>
+
+<%= render 'exposed_person' %>
+
+<p class="row">
+	<%= link_to "Back", corporate_applications_personnel_path, class: "btn btn-primary" %>
+	<%= link_to "Next", new_fx_and_payment_path, class: "btn btn-primary" %>
+</p>

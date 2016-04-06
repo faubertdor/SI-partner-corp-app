@@ -1,21 +1,23 @@
-<div>
-  <h2>Part I - General Information</h2>
-  <%= render 'general_infos/infos' %>
-</div>
+<div class="col-md-12">
+  <div class="row">
+    <h2>Part I - General Information</h2>
+      <%= render 'general_infos/infos' %>
+  </div>
 
-<div>
-  <h2>Part II - Corporate Personnel</h2>
-    <%= render 'authorized_representatives' %>
-    <%= render 'beneficial_owners' %>
-    <%= render 'officers' %>
-</div>
+  <div class="row">
+    <h2>Part II - Corporate Personnel</h2>
+      <%= render 'authorized_representatives' %>
+      <%= render 'beneficial_owners' %>
+      <%= render 'officers' %>
+  </div>
 
-<div>
-  <h2>Part III - Politically Exposed Persons Determination</h2>
-  <%= render 'politically_exposed_people/exposed_person' %>
-</div>
+  <div class="row">
+    <h2>Part III - Politically Exposed Persons Determination</h2>
+    <%= render 'politically_exposed_people/exposed_person' %>
+  </div>
 
-<div>
-  <h2>Part IV - Foreign Exchange and Payment Needs</h2>
-  <%= render 'fx_and_payments/fx_and_payments_needs' %>
+  <div class="row">
+    <h2>Part IV - Foreign Exchange and Payment Needs</h2>
+    <%= render 'fx_and_payments/fx_and_payments_needs' %>
+  </div>
 </div>

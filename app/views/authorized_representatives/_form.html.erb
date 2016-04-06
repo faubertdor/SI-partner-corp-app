@@ -1,68 +1,65 @@
-<%= form_for(@authorized_representative) do |f| %>
-<%= render partial: 'shared/errors',
-              locals: { model: @authorized_representative } %>
+<div class="row">
+  <%= form_for(@authorized_representative) do |f| %>
+  <p class="col-md-12">
+    <%= render partial: 'shared/errors', locals: { model: @authorized_representative } %>
+  </p>
 
-    <div class="row">
-      <div class="field small-4 small-offset-1 column">
-        <%= f.label :full_legal_name %><br>
-        <%= f.text_field :full_legal_name %>
-      </div>
-
-      <div class="field small-4 column">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-      </div>
+  <p class="row">
+    <div class="col-md-4">
+      <%= f.label :full_legal_name %><br>
+      <%= f.text_field :full_legal_name %>
     </div>
+    <div class="col-md-4">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+  </p>
 
-    <div class="row">
-      <div class="field small-4 small-offset-1 column">
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </div>
-
-      <div class="field small-2 column">
-        <%= f.label :date_of_birth %><br>
+  <p class="row">
+    <div class="col-md-4">
+        <%= f.label :date_of_birth %>
         <%= f.date_select :dob %>
-      </div>
     </div>
-
-    <div class="row">
-      <div class="field small-4 small-offset-1 column">
-        <%= f.label :street_address %><br>
+    <div class="col-md-4">
+        <%= f.label :street_address %>
         <%= f.text_field :street_address %>
-      </div>
-
-      <div class="field small-3 column">
-        <%= f.label :city %><br>
+    </div>
+    <div class="col-md-4">
+        <%= f.label :city %>
         <%= f.text_field :city %>
-      </div>
+    </div>
+  </p>
 
-      <div class="field small-1 column">
+  <p class="row">
+    <div class="col-md-4">
         <%= f.label :state %><br>
         <%= f.text_field :state %>
-      </div>
     </div>
-
-    <div class="row">
-      <div class="field small-4 small-offset-1 column">
+    <div class="col-md-4">
         <%= f.label :country %><br>
         <%= f.text_field :country %>
-      </div>
-
-      <div class="field small-2 column">
+    </div>
+    <div class="col-md-4">
         <%= f.label :zip_code %><br>
         <%= f.text_field :zip_code %>
-      </div>
     </div>
+  </p>
 
-    <div class="row">
-      <div class="actions small-5 small-offset-1 column">
-        <% if !@authorized_representative.new_record? %>
+  <p class="row">
+    <div class="col-md-6">
+      <% if !@authorized_representative.new_record? %>
           <%= link_to 'Back', corporate_applications_personnel_path,
-              class: "button expand" %>
-        <% end %>
-        <%= f.submit class: "button expand" %>
-      </div>
-    <% end %>
+                      class: "btn btn-primary" %>
+      <% end %>
     </div>
+    <div class="col-md-6">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </p>
+<% end %>
+</div>
  

@@ -1,6 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 $white: #FFF;
 $light-gray: #777;
 $state-danger-text: red;
+
+@mixin box_sizing {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+}
 
 /* universal */
 
@@ -24,7 +33,7 @@ textarea {
 }
 
 p {
-    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* typography */
@@ -95,7 +104,6 @@ p {
 input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
     width: 100%;
-    margin-bottom: 15px;
 }
 
 input {
@@ -103,10 +111,32 @@ input {
 }
 
 #error_explanation {
-    color: red;
-    ul {
-        margin: 0 0 30px 0;
-    }
+  border: 1px solid red;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.field_with_errors {
+    color: white;
+    background: red;
+    padding: 2px;
 }
 
 /* footer */

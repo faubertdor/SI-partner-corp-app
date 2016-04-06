@@ -1,59 +1,75 @@
 <div class="row">
-  <div class="small-4 large-left columns">
-    <%= form_for(@beneficial_owner) do |f| %>
-      <%= render partial: 'shared/errors',
-                 locals: { model: @beneficial_owner } %>
-      <div class="field">
-        <%= f.label :no_individual_own_25_percent_or_more %><br>
-        <%= f.check_box :no_ind_own_25_or_more %>
-      </div>
-      <div class="field">
-        <%= f.label :no_other_individual_own_25_percent_or_more %><br>
-        <%= f.check_box :no_other_own_25_or_more %>
-      </div>
-      <div class="field">
-        <%= f.label :owned_by_public_trade %><br>
-        <%= f.check_box :owned_by_pub_trade %>
-      </div>
-      <div class="field">
+  <%= form_for(@beneficial_owner) do |f| %>
+    <p class="col-md-12">
+      <%= render partial: 'shared/errors', locals: { model: @beneficial_owner } %>
+    </p>
+
+    <p class="row">
+      <div class="col-md-4">
         <%= f.label :full_legal_name %><br>
         <%= f.text_field :full_legal_name %>
       </div>
-      <div class="field">
+      <div class="col-md-4">
         <%= f.label :citizenship %><br>
         <%= f.text_field :citizenship %>
       </div>
-      <div class="field">
+      <div class="col-md-4">
         <%= f.label :ownership_percentage %><br>
         <%= f.text_field :ownership_percentage %>
-      </div>
-      <div class="field">
+      </div> 
+    </p>
+
+    <p class="row">   
+      <div class="col-md-4">
         <%= f.label :street_address %><br>
         <%= f.text_field :street_address %>
       </div>
-      <div class="field">
+      <div class="col-md-4">
         <%= f.label :city %><br>
         <%= f.text_field :city %>
       </div>
-      <div class="field">
+      <div class="col-md-4">
         <%= f.label :state %><br>
         <%= f.text_field :state %>
       </div>
-      <div class="field">
+    </p>
+
+    <p class="row">
+      <div class="col-md-6">
         <%= f.label :country %><br>
         <%= f.text_field :country %>
       </div>
-      <div class="field">
+      <div class="col-md-6">
         <%= f.label :zip_code %><br>
         <%= f.text_field :zip_code %>
       </div>
-      <div class="actions">
+    </p>
+
+    <p class="row">
+      <div class="col-md-4 inline">
+        <%= f.label :no_individual_own_25_percent_or_more %>
+        <%= f.check_box :no_ind_own_25_or_more %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :no_other_individual_own_25_percent_or_more %>
+        <%= f.check_box :no_other_own_25_or_more %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :owned_by_public_trade %>
+        <%= f.check_box :owned_by_pub_trade %>
+      </div>
+    </p>
+
+    <p class="row">
+      <div class="col-md-6">
         <% if !@beneficial_owner.new_record? %>
           <%= link_to 'Back', corporate_applications_personnel_path,
-              class: "button expand" %>
-        <% end %>
-        <%= f.submit class: "button expand" %>
+                      class: "btn btn-primary" %>
+          <% end %>
       </div>
-    <% end %>
-  </div>
+      <div class="col-md-6">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </p>
+  <% end %>
 </div>

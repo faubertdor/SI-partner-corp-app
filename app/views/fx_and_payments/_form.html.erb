@@ -1,43 +1,55 @@
 <div class="row">
-  <div class="small-4 large-left columns">
-    <%= form_for(@fx_and_payment) do |f| %>
+  <%= form_for(@fx_and_payment) do |f| %>
+    <p class="col-md-12">
       <%= render partial: 'shared/errors', locals: { model: @fx_and_payment } %>
+    </p>
     
-      <div class="field">
-        <%= f.label :purpose_of_transactions %><br>
+    <p class="row">
+      <div class="col-md-4">
+        <%= f.label :purpose, "Purpose of transactions" %><br>
         <%= f.text_field :purpose %>
       </div>
-      <div class="field">
-        <%= f.label :currencies_needed %><br>
+      <div class="col-md-4">
+        <%= f.label :currencies, "Currencies needed" %><br>
         <%= f.text_field :currencies %>
       </div>
-      <div class="field">
-        <%= f.label :approximate_per_trade_volume %><br>
+      <div class="col-md-4">
+        <%= f.label :approx_trade_vol, "Approximate per trade volume" %><br>
         <%= f.number_field :approx_trade_vol %>
       </div>
-      <div class="field">
-        <%= f.label :approximate_number_of_monthly_transactions %><br>
+    </p>
+
+    <p class="row">
+      <div class="col-md-6">
+        <%= f.label :approx_monthly_nb, "Approximate number of monthly transactions" %><br>
         <%= f.number_field :approx_monthly_nb %>
       </div>
-      <div class="field">
-        <%= f.label :approximate_annual_volume %><br>
+      <div class="col-md-6">
+        <%= f.label :approx_annual_vol, "Approximate annual volume" %><br>
         <%= f.number_field :approx_annual_vol %>
       </div>
-      <div class="field">
-        <%= f.label :countries_which_funds_transfers_are_expected_to_go %><br>
+    </p>
+
+    <p class="row">
+      <div class="col-md-6">
+        <%= f.label :countries_transf_to, "Countries which funds transfers are expected to go" %><br>
         <%= f.text_field :countries_transf_to %>
       </div>
-      <div class="field">
-        <%= f.label :countries_which_funds_are_expected_to_come_from %><br>
+      <div class="col-md-6">
+        <%= f.label :countries_transf_from, "Countries which funds are expected to come from" %><br/>
         <%= f.text_field :countries_transf_from %>
       </div>
-    
-      <div class="actions">
+    </p>
+       
+    <p class="row">
+      <div class="col-md-6">
         <% if !@fx_and_payment.new_record? %>
-             <%= link_to 'Back', current_user.fx_and_payment, class: "button expand" %>
+             <%= link_to 'Back', current_user.fx_and_payment, class: "btn btn-primary" %>
         <% end %>
-        <%= f.submit class: "button expand" %>
       </div>
+      <div class="col-md-6">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </p>
     <% end %>
-  </div>
 </div>

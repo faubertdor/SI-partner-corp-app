@@ -4,8 +4,8 @@
 <%= render 'authorized_representatives' %>
 <%= render 'beneficial_owners' %>
 <%= render 'officers' %>
-<div class="row">
+<p class="row">
 	<%= link_to "Back", general_info_path(current_user.general_info),
 			    class: "btn btn-primary" %>
 	<%= link_to "Next", politically_exposed_people_path, class: "btn btn-primary" %>
-</div>
+</p>
