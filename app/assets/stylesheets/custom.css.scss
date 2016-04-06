@@ -13,6 +13,14 @@ $state-danger-text: red;
 
 /* universal */
 
+.underline {
+    border-bottom: 2px solid red;
+}
+
+div {
+    padding-bottom: 10px;    
+}
+
 body {
     padding-top: 80px;
 }
