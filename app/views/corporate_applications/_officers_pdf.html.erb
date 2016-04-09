@@ -1,20 +1,15 @@
-<div>
-  <h3>Officers</h3>
-  <p>
-     An individual who holds an office within the corporation (e.g. President, Vice-President, CEO).
-  </p>
-  <table>
-    <thead>
-      <th>Full legal name</th>
-      <th>Title</th>
-    </thead>
-    <tbody>
-      <% @officers.each do |officer| %>
-        <tr>
-          <td><%= officer.full_legal_name %></td>
-          <td><%= officer.title %></td>
-        </tr>
-      <% end %>
-    </tbody>
+<p>
+  <strong>Officers</strong><br/>
+  An individual who holds an office within the corporation (e.g. President, Vice-President, CEO).
+</p>
+
+<% @officers.each do |officer| %>
+  <table class="table table-striped">
+    <tr>
+      <td><strong>Full Legal Name</strong></td>
+      <td><%= officer.full_legal_name %></td>
+      <td><strong>Title / Position</strong></td>
+      <td><%= officer.title %></td>
+    </tr>
   </table>
-</div>
+<% end %>

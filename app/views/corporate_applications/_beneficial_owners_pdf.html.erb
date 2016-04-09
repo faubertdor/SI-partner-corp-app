@@ -1,34 +1,46 @@
-<div>
-  <h3>Beneficial Owners</h3>
-  <p>
-    An individual who directly or indirectly owns or controls 25% or more of the corporation.
-    Please provide documentation establishing ownership, control and structure of the Applicant
-    and documentation verifying beneficial ownership.
-  </p>
-  <table>
-    <thead>
-      <th>Full legal name</th>
-      <th>Citizenship</th>
-      <th>Ownership percentage</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zip Code</th>
-    </thead>
-    <tbody>
-      <% @beneficial_owners.each do |bo| %>
-        <tr>
-          <td><%= bo.full_legal_name %></td>
-          <td><%= bo.citizenship %></td>
-          <td><%= bo.ownership_percentage %></td>
-          <td><%= bo.street_address %></td>
-          <td><%= bo.city %></td>
-          <td><%= bo.state %></td>
-          <td><%= bo.country %></td>
-          <td><%= bo.zip_code %></td>
-        </tr>
-      <% end %>
-    </tbody>
+<p>
+  <strong>Beneficial Owners</strong></br>
+  An individual who directly or indirectly owns or controls 25% or more of the corporation.
+  Please provide documentation establishing ownership, control and structure of the Applicant
+  and documentation verifying beneficial ownership.
+</p>
+
+<% @beneficial_owners.each do |bo| %>
+  <table class="table table-striped">
+    <tr>
+      <td><strong>Full Legal Name</strong></td>
+      <td><%= bo.full_legal_name %></td>
+      <td><strong>Citizenship</strong></td>
+      <td><%= bo.citizenship %></td>
+      <td><strong>Ownership Percentage</strong></td>
+      <td><%= bo.ownership_percentage %></td>
+    </tr>
+    
+    <tr>
+      <td><strong>Street Address</strong></td>
+      <td><%= bo.street_address %></td>
+      <td><strong>City</strong></td>
+      <td><%= bo.city %></td>
+      <td><strong>State</strong></td>
+      <td><%= bo.state %></td>
+    </tr>
+
+    <tr>
+      <td><strong>No individuals own 25% or more</strong></td>
+      <td><%= b_to_text(bo.no_ind_own_25_or_more) %></td>
+      <td><strong>No other individuals own 25% or more</strong></td>
+      <td><%= b_to_text(bo.no_other_own_25_or_more) %></td>
+      <td><strong>Owned by a publicly traded entity</strong></td>
+      <td><%= b_to_text(bo.owned_by_pub_trade) %></td>
+    </tr>
   </table>
-</div>
+
+  <table class="table table-striped">
+    <tr>
+      <td><strong>Zip Code</strong></td>
+      <td><%= bo.zip_code %></td>
+      <td><strong>Country</strong></td>
+      <td><%= bo.country %></td>
+    </tr>
+  </table>
+<% end %>

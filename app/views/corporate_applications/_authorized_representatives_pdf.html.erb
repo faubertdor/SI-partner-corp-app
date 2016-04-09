@@ -1,34 +1,38 @@
-<div>
-  <h3>Authorized Representatives</h3>
-  <p>
-     An individual who is authorized to book, negotiate and conclude the terms of a transaction 
-  </p>
-  <table>
-    <thead>
-      <th>Full legal name</th>
-      <th>Occupation</th>
-      <th>Title/Position</th>
-      <th>Date of Birth </th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zip code</th>
-    </thead>
-    <tbody>
-      <% @authorized_reps.each do |rep| %>
-        <tr>
-          <td><%= rep.full_legal_name %></td>
-          <td><%= rep.email %></td>
-          <td><%= rep.title %></td>
-          <td><%= rep.dob %></td>
-          <td><%= rep.street_address %></td>
-          <td><%= rep.city %></td>
-          <td><%= rep.state %></td>
-          <td><%= rep.country %></td>
-          <td><%= rep.zip_code %></td>
-        </tr>
-      <% end %>
-    </tbody>
+<p>
+   <strong>Authorized Representatives</strong><br/>
+   An individual who is authorized to book, negotiate and conclude the terms of a transaction.
+</p>
+
+<% @authorized_reps.each do |rep| %>
+  <table class="table table-striped">
+    <tr>
+      <td><strong>Full Legal Name</strong></td>
+      <td><%= rep.full_legal_name %></td>
+      <td><strong>Position</strong></td>
+      <td><%= rep.title %></td>
+    </tr>
+      <tr>
+      <td><strong>Email</strong></td>
+      <td><%= rep.email %></td>
+      <td><strong>Date of Birth</strong></td>
+      <td><%= rep.dob %></td>
+    </tr>
+    
+    <tr>
+      <td><strong>Street Address</strong></td>
+      <td><%= rep.street_address %></td>
+      <td><strong>City</strong></td>
+      <td><%= rep.city %></td>
+    </tr>
   </table>
-</div>
+  <table class="table table-striped">
+    <tr>
+      <td><strong>State</strong></td>
+      <td><%= rep.state %></td>
+      <td><strong>Zip Code</strong></td>
+      <td><%= rep.zip_code %></td>
+      <td><strong>Country</strong></td>
+      <td><%= rep.country %></td>
+    </tr>
+  </table>
+<% end %>

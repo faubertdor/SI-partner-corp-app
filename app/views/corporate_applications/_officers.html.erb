@@ -1,27 +1,25 @@
-<div class="row">
-  <h2>Officers</h2>
-  <p>
-     An individual who holds an office within the corporation (e.g. President, Vice-President, CEO).
-  </p>
-  <%= link_to "Add new", new_officer_path, class: "btn btn-primary" %>
-  <table class="table">
-    <thead>
-      <th>Full legal name</th>
-      <th>Title</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <% @officers.each do |officer| %>
-        <tr>
-          <td><%= officer.full_legal_name %></td>
-          <td><%= officer.title %></td>
-          <td>
-            <%= link_to "Edit", edit_officer_path(officer) %> <br/>
-            <%= link_to "Delete", officer_path(officer),
-                        method: :delete, data: { confirm: "Are you sure?" } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<h3>Officers</h3>
+<p>
+   An individual who holds an office within the corporation (e.g. President, Vice-President, CEO).
+</p>
+<%= link_to "Add new", new_officer_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>
+    <th>Full Legal Name</th>
+    <th>Title</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @officers.each do |officer| %>
+      <tr>
+        <td><%= officer.full_legal_name %></td>
+        <td><%= officer.title %></td>
+        <td>
+          <%= link_to "Edit", edit_officer_path(officer) %> <br/>
+          <%= link_to "Delete", officer_path(officer),
+                      method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,40 +1,38 @@
-<div class="row">
-  <h2>Authorized Representatives </h2>
-  <p>An individual who is authorized to book, negotiate and conclude the terms of a transaction.</p>
-  <%= link_to "Add new", new_authorized_representative_path, class: "btn btn-primary" %>
-  <table class="table">
-    <thead>
-      <th>Full legal name</th>
-      <th>Email</th>
-      <th>Position</th>
-      <th>Date of Birth </th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zip code</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <% @authorized_reps.each do |rep| %>
-        <tr>
-          <td><%= rep.full_legal_name %></td>
-          <td><%= rep.email %></td>
-          <td><%= rep.title %></td>
-          <td><%= rep.dob %></td>
-          <td><%= rep.street_address %></td>
-          <td><%= rep.city %></td>
-          <td><%= rep.state %></td>
-          <td><%= rep.country %></td>
-          <td><%= rep.zip_code %></td>
-          <td>
-              <%= link_to "Edit", edit_authorized_representative_path(rep) %>
-              <br/>
-              <%= link_to "Delete", authorized_representative_path(rep),
-                          method: :delete, data: { confirm: "Are you sure?" } %> 
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<h3>Authorized Representatives</h3>
+<p>An individual who is authorized to book, negotiate and conclude the terms of a transaction.</p>
+<%= link_to "Add new", new_authorized_representative_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>
+    <th>Full legal name</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Date of Birth </th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Zip code</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @authorized_reps.each do |rep| %>
+      <tr>
+        <td><%= rep.full_legal_name %></td>
+        <td><%= rep.email %></td>
+        <td><%= rep.title %></td>
+        <td><%= rep.dob %></td>
+        <td><%= rep.street_address %></td>
+        <td><%= rep.city %></td>
+        <td><%= rep.state %></td>
+        <td><%= rep.country %></td>
+        <td><%= rep.zip_code %></td>
+        <td>
+            <%= link_to "Edit", edit_authorized_representative_path(rep) %>
+            <br/>
+            <%= link_to "Delete", authorized_representative_path(rep),
+                        method: :delete, data: { confirm: "Are you sure?" } %> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

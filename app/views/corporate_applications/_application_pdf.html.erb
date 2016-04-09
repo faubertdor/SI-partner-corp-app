@@ -1,19 +1,25 @@
 <div class="row">
   <span class="title">PeopleHedge Corporate Application</span>
   <span class="sub-title">Part I - General Information</span>
-  <%= render 'general_infos/infos_pdf' %>
+  <%= render 'general_infos/infos' %>
 </div>
 
+<br/>
+
 <div class="row">
-  <h3>Part II - Corporate Personnel</h3>
+  <span class="sub-title">Part II - Corporate Personnel</span>
     <%= render 'authorized_representatives_pdf' %>
     <div class="page-break"></div>
     <%= render 'beneficial_owners_pdf' %>
+    <br/><br/>
     <%= render 'officers_pdf' %>
+    <div class="page-break"></div>
 </div>
 
+<br/>
+
 <div class="row">
-  <h3>Part III - Politically Exposed Persons Determination</h3>
+  <span class="sub-title">Part III - Politically Exposed Persons Determination</span>
   <%= render 'politically_exposed_people/exposed_person_pdf' %>
 </div>
 <div class="page-break"></div>

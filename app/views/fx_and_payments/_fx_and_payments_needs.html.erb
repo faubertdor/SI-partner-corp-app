@@ -1,36 +1,27 @@
-<div class="row">
-<p>
-  <strong>Purpose:</strong>
-  <%= @fx_and_payment.purpose %>
-</p>
+<table class="table table-striped">
+  <tr>
+    <td><strong>Purpose of Transactions</strong></td>
+    <td><%= @fx_and_payment.purpose %></td>
+    <td><strong>Currencies Needed</strong></td>
+    <td><%= @fx_and_payment.currencies %></td>
+    <td><strong>Approximate per Trade Volume</strong></td>
+    <td><%= @fx_and_payment.approx_trade_vol %></td>
+  </tr>
 
-<p>
-  <strong>Currencies:</strong>
-  <%= @fx_and_payment.currencies %>
-</p>
+</table>
 
-<p>
-  <strong>Approx trade vol:</strong>
-  <%= @fx_and_payment.approx_trade_vol %>
-</p>
+<table class="table table-striped">
+  <tr>
+    <td><strong> Approximate Number of Monthly Transactions</strong></td>
+    <td><%= @fx_and_payment.approx_monthly_nb %></td>
+    <td><strong> Approximate Annual Volume</strong></td>
+    <td><%= @fx_and_payment.approx_annual_vol %></td>
+  </tr>
 
-<p>
-  <strong>Approx monthly nb:</strong>
-  <%= @fx_and_payment.approx_monthly_nb %>
-</p>
-
-<p>
-  <strong>Approx annual vol:</strong>
-  <%= @fx_and_payment.approx_annual_vol %>
-</p>
-
-<p>
-  <strong>Countries trans to:</strong>
-  <%= @fx_and_payment.countries_transf_to %>
-</p>
-
-<p>
-  <strong>Countries trans from:</strong>
-  <%= @fx_and_payment.countries_transf_from %>
-</p>
-</div>
+  <tr>
+    <td><strong>Countries which funds transfers are expected to go to</strong></td>
+    <td><%= @fx_and_payment.countries_transf_to %></td>
+    <td><strong>Countries which funds are expected to come from</strong></td>
+    <td><%= @fx_and_payment.countries_transf_from %></td>
+  </tr>
+</table>

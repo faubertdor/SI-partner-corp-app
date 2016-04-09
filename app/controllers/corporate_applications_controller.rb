@@ -48,8 +48,8 @@ class CorporateApplicationsController < ApplicationController
       if current_user.is_app_complete == false
         redirect_to comporate_applications_review_url
       end
-      sign_out current_user
-    else
+      #sign_out current_user
+   # else
       redirect_to root_url
     end
   end

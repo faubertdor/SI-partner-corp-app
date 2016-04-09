@@ -1,41 +1,45 @@
-<div class="row">
-  <h2>Beneficial Owners</h2>
-  <p>
-    An individual who directly or indirectly owns or controls 25% or more of the corporation.
-    Please provide documentation establishing ownership, control and structure of the Applicant
-    and documentation verifying beneficial ownership.
-  </p>
-  <%= link_to "Add new", new_beneficial_owner_path, class: "btn btn-primary" %>
-  <table class="table">
-    <thead>
-      <th>Full legal name</th>
-      <th>Citizenship</th>
-      <th>Ownership percentage</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zip Code</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <% @beneficial_owners.each do |bo| %>
-        <tr>
-          <td><%= bo.full_legal_name %></td>
-          <td><%= bo.citizenship %></td>
-          <td><%= bo.ownership_percentage %></td>
-          <td><%= bo.street_address %></td>
-          <td><%= bo.city %></td>
-          <td><%= bo.state %></td>
-          <td><%= bo.country %></td>
-          <td><%= bo.zip_code %></td>
-          <td>
-            <%= link_to "Edit", edit_beneficial_owner_path(bo) %><br/>
-            <%= link_to "Delete", beneficial_owner_path(bo),
-                        method: :delete, data: { confirm: "Are you sure? " } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<h3>Beneficial Owners</h3>
+<p>
+  An individual who directly or indirectly owns or controls 25% or more of the corporation.
+  Please provide documentation establishing ownership, control and structure of the Applicant
+  and documentation verifying beneficial ownership.
+</p>
+<%= link_to "Add new", new_beneficial_owner_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>
+    <th>Full legal name</th>
+    <th>Citizenship</th>
+    <th>Ownership percentage</th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Zip Code</th>
+    <th>No individuals own 25% or more</th>
+    <th>No other individuals own 25% or more</th>
+    <th>Owned by a publicly traded entity</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @beneficial_owners.each do |bo| %>
+      <tr>
+        <td><%= bo.full_legal_name %></td>
+        <td><%= bo.citizenship %></td>
+        <td><%= bo.ownership_percentage %></td>
+        <td><%= bo.street_address %></td>
+        <td><%= bo.city %></td>
+        <td><%= bo.state %></td>
+        <td><%= bo.country %></td>
+        <td><%= bo.zip_code %></td>
+        <td><%= b_to_text(bo.no_ind_own_25_or_more) %></td>
+        <td><%= b_to_text(bo.no_other_own_25_or_more) %></td>
+        <td><%= b_to_text(bo.owned_by_pub_trade) %></td>
+        <td>
+          <%= link_to "Edit", edit_beneficial_owner_path(bo) %><br/>
+          <%= link_to "Delete", beneficial_owner_path(bo),
+                      method: :delete, data: { confirm: "Are you sure? " } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
