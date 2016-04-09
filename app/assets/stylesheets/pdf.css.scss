@@ -1,1 +1,33 @@
-.page-break { display:block; clear:both; page-break-after:always; }
+/* Formatting of the PDF document */
+
+.title{
+	    font-size: 30px;
+	    font-weight: bold;
+	    margin-bottom: 30px;
+	    text-align: left;
+	    display: block;
+}
+
+.sub-title {
+		    font-size: 20px;
+		    margin-bottom: 10px;
+		    text-align: left;
+		    font-weight: bold;
+		    display: block;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+
+.pdf-body { 
+			margin: 5px; 
+			padding: 5px; 
+}
+
+.page-break { 
+			  display:block; 
+			  clear:both; 
+			  page-break-after:always; 
+}
