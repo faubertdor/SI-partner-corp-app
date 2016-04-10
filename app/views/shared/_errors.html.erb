@@ -1,15 +1,14 @@
-<div class="col-md-12">
-  <% if model.errors.any? %>
-    <div id="error_explanation">
-        <h3>
-          The form contains <%= pluralize(model.errors.count, "error") %>
-        </h3>
+<% if model.errors.any? %>
+  <div id="error_explanation">
+    <h3>
+      The form contains <%= pluralize(model.errors.count, "error") %>
+    </h3>
 
-        <ul>
-          <% model.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-    </div>
-  <% end %>
-</div>
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

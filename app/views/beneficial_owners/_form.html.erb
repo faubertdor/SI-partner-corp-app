@@ -1,66 +1,70 @@
-<div class="row">
+<div class="col-md-12">
   <%= form_for(@beneficial_owner) do |f| %>
-    <p class="col-md-12">
-      <%= render partial: 'shared/errors', locals: { model: @beneficial_owner } %>
-    </p>
+    <%= render partial: 'shared/errors', locals: { model: @beneficial_owner } %>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-4">
-        <%= f.label :full_legal_name %><br>
-        <%= f.text_field :full_legal_name %>
+        <%= f.label :full_legal_name, "Full Legal Name" %><br>
+        <%= f.text_field :full_legal_name, class: "form-control" %>
       </div>
       <div class="col-md-4">
-        <%= f.label :citizenship %><br>
-        <%= f.text_field :citizenship %>
+        <%= f.label :citizenship, "Nationality / Citizenship" %><br>
+        <%= f.text_field :citizenship, class: "form-control" %>
       </div>
       <div class="col-md-4">
-        <%= f.label :ownership_percentage %><br>
-        <%= f.text_field :ownership_percentage %>
+        <%= f.label :ownership_percentage, "Ownership Percentage" %><br>
+        <%= f.text_field :ownership_percentage, class: "form-control" %>
       </div> 
-    </p>
+    </div>
 
-    <p class="row">   
+    <div class="row">   
       <div class="col-md-4">
-        <%= f.label :street_address %><br>
-        <%= f.text_field :street_address %>
+        <%= f.label :street_address, "Street Address" %><br>
+        <%= f.text_field :street_address, class: "form-control" %>
       </div>
       <div class="col-md-4">
         <%= f.label :city %><br>
-        <%= f.text_field :city %>
+        <%= f.text_field :city, class: "form-control" %>
       </div>
       <div class="col-md-4">
         <%= f.label :state %><br>
-        <%= f.text_field :state %>
+        <%= f.text_field :state, class: "form-control" %>
       </div>
-    </p>
+    </div>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <%= f.label :country %><br>
-        <%= f.text_field :country %>
+        <%= f.text_field :country, class: "form-control" %>
       </div>
       <div class="col-md-6">
-        <%= f.label :zip_code %><br>
-        <%= f.text_field :zip_code %>
+        <%= f.label :zip_code, "Zip Code" %><br>
+        <%= f.text_field :zip_code, class: "form-control" %>
       </div>
-    </p>
+    </div>
 
-    <p class="row">
-      <div class="col-md-4 inline">
-        <%= f.label :no_individual_own_25_percent_or_more, "No individuals own 25% or more" %>
-        <%= f.check_box :no_ind_own_25_or_more %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :owned_by_public_trade, class: "checkbox inline" do %>
+          <%= f.check_box :owned_by_pub_trade %>
+          <span>Owned by a publicly traded entity</span>
+        <% end %>
       </div>
-      <div class="col-md-4">
-        <%= f.label :no_other_individual_own_25_percent_or_more, "No other individuals own 25% or more" %>
-        <%= f.check_box :no_other_own_25_or_more %>
+      <div class="col-md-6">
+        <%= f.label :no_ind_own_25_or_more, class: "checkbox inline" do %>
+          <%= f.check_box :no_ind_own_25_or_more %>
+          <span>No individuals own 25% or more</span>
+        <% end %>
       </div>
-      <div class="col-md-4">
-        <%= f.label :owned_by_public_trade, "Owned by a publicly traded entity" %>
-        <%= f.check_box :owned_by_pub_trade %>
+      <div class="col-md-7">
+        <%= f.label :no_other_individual_own_25_percent_or_more, class: "checkbox inline" do %>
+          <%= f.check_box :no_other_own_25_or_more %>
+          <span>No other individuals own 5% or more</span>
+        <% end %>
       </div>
-    </p>
+    </div>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <% if !@beneficial_owner.new_record? %>
           <%= link_to 'Back', corporate_applications_personnel_path,
@@ -70,6 +74,6 @@
       <div class="col-md-6">
         <%= f.submit class: "btn btn-primary" %>
       </div>
-    </p>
+    </div>
   <% end %>
 </div>

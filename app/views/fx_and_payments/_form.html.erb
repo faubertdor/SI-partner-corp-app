@@ -1,47 +1,45 @@
-<div class="row">
+<div class="col-md-12">
   <%= form_for(@fx_and_payment) do |f| %>
-    <p class="col-md-12">
-      <%= render partial: 'shared/errors', locals: { model: @fx_and_payment } %>
-    </p>
+    <%= render partial: 'shared/errors', locals: { model: @fx_and_payment } %>
     
-    <p class="row">
+    <div class="row">
       <div class="col-md-4">
-        <%= f.label :purpose, "Purpose of transactions" %><br>
-        <%= f.text_field :purpose %>
+        <%= f.label :purpose, "Purpose of Transactions (Please be specific)" %><br>
+        <%= f.text_field :purpose, class: "form-control" %>
       </div>
       <div class="col-md-4">
-        <%= f.label :currencies, "Currencies needed" %><br>
-        <%= f.text_field :currencies %>
+        <%= f.label :currencies, "Currencies Needed" %><br>
+        <%= f.text_field :currencies, class: "form-control" %>
       </div>
       <div class="col-md-4">
-        <%= f.label :approx_trade_vol, "Approximate per trade volume" %><br>
-        <%= f.number_field :approx_trade_vol %>
+        <%= f.label :approx_trade_vol, "Approximate per Trade Volume" %><br>
+        <%= f.text_field :approx_trade_vol, class: "form-control" %>
       </div>
-    </p>
+    </div>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
-        <%= f.label :approx_monthly_nb, "Approximate number of monthly transactions" %><br>
-        <%= f.number_field :approx_monthly_nb %>
+        <%= f.label :approx_monthly_nb, "Approximate Number of Monthly Transactions" %><br>
+        <%= f.text_field :approx_monthly_nb, class: "form-control" %>
       </div>
       <div class="col-md-6">
-        <%= f.label :approx_annual_vol, "Approximate annual volume" %><br>
-        <%= f.number_field :approx_annual_vol %>
+        <%= f.label :approx_annual_vol, "Approximate Annual Volume" %><br>
+        <%= f.text_field :approx_annual_vol, class: "form-control" %>
       </div>
-    </p>
+    </div>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <%= f.label :countries_transf_to, "Countries which funds transfers are expected to go" %><br>
-        <%= f.text_field :countries_transf_to %>
+        <%= f.text_field :countries_transf_to, class: "form-control" %>
       </div>
       <div class="col-md-6">
         <%= f.label :countries_transf_from, "Countries which funds are expected to come from" %><br/>
-        <%= f.text_field :countries_transf_from %>
+        <%= f.text_field :countries_transf_from, class: "form-control" %>
       </div>
-    </p>
+    </div>
        
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <% if !@fx_and_payment.new_record? %>
              <%= link_to 'Back', current_user.fx_and_payment, class: "btn btn-primary" %>
@@ -50,6 +48,6 @@
       <div class="col-md-6">
         <%= f.submit class: "btn btn-primary" %>
       </div>
-    </p>
+    </div>
     <% end %>
 </div>

@@ -1,45 +1,43 @@
-<div class="row">
+<div class="col-md-12">
   <%= form_for(@politically_exposed_person) do |f| %>
-    <p class="col-md-12">
-      <%= render partial: 'shared/errors', locals: { model: @politically_exposed_person } %>
-    </p>
+    <%= render partial: 'shared/errors', locals: { model: @politically_exposed_person } %>
 
-    <p class="row">
+    <div class="row">
       <div class="col-md-4">
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: "form-control" %>
       </div>
       <div class="col-md-4">
         <%= f.label :title %><br>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: "form-control" %>
       </div>
       <div class="col-md-4">
-        <%= f.label :position_held %><br>
-        <%= f.text_field :position_held %>
+        <%= f.label :position_held, "Position Held" %><br>
+        <%= f.text_field :position_held, class: "form-control" %>
       </div>
-    </p>
+    </div>
       
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <%= f.label :from %><br>
-        <%= f.date_select :from %>
+        <%= f.date_select :from, class: "form-control" %>
       </div>
       <div class="col-md-6">
         <%= f.label :to %><br>
-        <%= f.date_select :to %>
+        <%= f.date_select :to, class: "form-control" %>
       </div>
-    </p>
+    </div>
     
-    <p class="row">
+    <div class="row">
       <div class="col-md-6">
         <% if !@politically_exposed_person.new_record? %>
-              <%= link_to 'Back', corporate_applications_personnel_path,
+              <%= link_to 'Back', politically_exposed_people_path,
                           class: "btn btn-primary" %>
         <% end %>
       </div>
       <div class="col-md-6">
         <%= f.submit class: "btn btn-primary" %>
       </div>
-    </p>
+    </div>
   <% end %>
 </div>
