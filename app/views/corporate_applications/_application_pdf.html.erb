@@ -9,11 +9,10 @@
 <div class="row">
   <span class="sub-title">Part II - Corporate Personnel</span>
     <%= render 'authorized_representatives_pdf' %>
-    <div class="page-break"></div>
+    <br/>
     <%= render 'beneficial_owners_pdf' %>
-    <br/><br/>
+    <br/>
     <%= render 'officers_pdf' %>
-    <div class="page-break"></div>
 </div>
 
 <br/>
@@ -22,56 +21,24 @@
   <span class="sub-title">Part III - Politically Exposed Persons Determination</span>
   <%= render 'politically_exposed_people/exposed_person_pdf' %>
 </div>
-<div class="page-break"></div>
+
+<br/>
+
 <div class="row">
-  <h3>Part IV - Foreign Exchange and Payment Needs</h3>
+  <span class="sub-title">Part IV - Foreign Exchange and Payment Needs</span>
   <%= render 'fx_and_payments/fx_and_payments_needs' %>
 </div>
 
-<div class="row">
-  <h3>Part V - Authorizations</h3>
-</div>
 <div class="page-break"></div>
-<div>
-  <h3>Part VI - Banking</h3>
-  <div class="field small-5 small-offset-1 column">
-   Bank Name:
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Name of Account Manager:
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Address of Bank Branch: <br/>
-   (including Street Address, City/Town, Province/State, Country, and Postal/Zip Code)
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Account Number:
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Transit: <br/>
-   ABA: <br/>
-   Fedwire: <br/>
-   Sort Code Number: <br/>
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Account Number:
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Transit: <br/>
-   ABA: <br/>
-   Fedwire: <br/>
-   Sort Code Number: <br/>
-  </div>
-  <div class="field small-5 small-offset-1 column">
-   Settlement Methods <br/>
-   DEFT/ACH: <br/>
-   Wire: <br/>
-   Draft: <br/>
-   Cheque/Check: <br/>
-   Electronic bill payment: <br/>
-   Checkmatic (US only): <br/>
-   Reverse wire drawdown (US only): <br/>
-   To ensure accuracy, please provide a void cheque/check for any CAD or USD
-   bank account that will be used.
-  </div>
+
+<div class="row">
+  <span class="sub-title">Part V - Banking</span>
+  <%= render 'banking_pdf' %>
+</div>
+
+<div class="page-break"></div>
+
+<div class="row">
+  <span class="sub-title">Part VI - Authorizations and Certifications</span>
+  <%= render 'authorizations_pdf' %>
 </div>

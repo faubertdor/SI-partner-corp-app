@@ -30,10 +30,10 @@ class CorporateApplicationsController < ApplicationController
     CorporateApplicationMailer.send_application(current_user, pdf).deliver_now
 
     # Test code below
-    save_path = Rails.root.join('.','filename.pdf')
-    File.open(save_path, 'wb') do |file|
-      file << pdf
-    end
+    #save_path = Rails.root.join('.','filename.pdf')
+    #File.open(save_path, 'wb') do |file|
+     # file << pdf
+    #end
     @user = User.find_by(id: current_user.id)
     @user.is_app_complete = true
     @user.save
@@ -48,8 +48,8 @@ class CorporateApplicationsController < ApplicationController
       if current_user.is_app_complete == false
         redirect_to comporate_applications_review_url
       end
-      #sign_out current_user
-   # else
+        sign_out current_user
+    else
       redirect_to root_url
     end
   end

@@ -17,8 +17,16 @@
 }
 
 .pdf-body { 
-			margin: 5px; 
-			padding: 5px; 
+			margin: 10px; 
+			padding: 10px; 
+}
+
+.table-border-top {
+	border-top: 1px solid;
+}
+
+table, tr, td, th, tbody, thead, tfoot, .row {
+    page-break-inside: avoid !important;
 }
 
 .page-break { 
