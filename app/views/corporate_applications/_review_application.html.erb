@@ -1,7 +1,9 @@
 <div class="col-md-12">
   <div class="row">
-    <h2>Part I - General Information</h2>
-    <br/>
+    <h2>
+      Part I - General Information
+      <%= link_to 'Edit', edit_general_info_path(@general_info), class: "btn btn-primary" %>
+    </h2>
     <%= render 'general_infos/infos' %>
   </div>
 
@@ -13,13 +15,18 @@
   </div>
 
   <div class="row">
-    <h2>Part III - Politically Exposed Persons Determination</h2>
+    <h2>
+      Part III - Politically Exposed Persons Determination
+      <%= link_to 'Add new', new_politically_exposed_person_path, class: "btn btn-primary" %>
+    </h2>
     <%= render 'politically_exposed_people/exposed_person' %>
   </div>
 
   <div class="row">
-    <h2>Part IV - Foreign Exchange and Payment Needs</h2>
-    <br/>
+    <h2>
+      Part IV - Foreign Exchange and Payment Needs
+      <%= link_to 'Edit', edit_fx_and_payment_path(@fx_and_payment), class: "btn btn-primary" %>
+    </h2>
     <%= render 'fx_and_payments/fx_and_payments_needs' %>
   </div>
 </div>

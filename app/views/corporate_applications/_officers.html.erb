@@ -1,9 +1,8 @@
-<h3>Officers</h3>
+<h3>Officers <%= link_to "Add new", new_officer_path, class: "btn btn-primary" %></h3>
 <p>
    An individual who holds an office within the corporation (e.g. President, Vice-President, CEO).
 </p>
-<%= link_to "Add new", new_officer_path, class: "btn btn-primary" %>
-<table class="table">
+<table class="table table-striped table-bordered">
   <thead>
     <th>Full Legal Name</th>
     <th>Title</th>
@@ -15,7 +14,7 @@
         <td><%= officer.full_legal_name %></td>
         <td><%= officer.title %></td>
         <td>
-          <%= link_to "Edit", edit_officer_path(officer) %> <br/>
+          <%= link_to "Edit", edit_officer_path(officer)%> <br/>
           <%= link_to "Delete", officer_path(officer),
                       method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
