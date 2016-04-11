@@ -10,6 +10,9 @@ class GeneralInfosController < ApplicationController
   def new
     if current_user.general_info.nil?
       @general_info = current_user.build_general_info
+      @general_info.cell_number = "+1"
+      @general_info.landline_number = "+1"
+      @general_info.website = "http://"
     else
       redirect_to current_user.general_info
     end

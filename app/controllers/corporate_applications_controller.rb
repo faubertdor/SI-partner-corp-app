@@ -18,6 +18,20 @@ class CorporateApplicationsController < ApplicationController
     @authorized_reps = current_user.authorized_representatives.all
     @beneficial_owners = current_user.beneficial_owners.all
     @officers = current_user.officers.all
+
+    # Set progress bar
+    @progress = 0.25
+    if !@authorized_reps.empty?
+      @progress += 0.1
+    end
+
+    if !@beneficial_owners.empty?
+      @progress += 0.10
+    end
+
+    if !@officers.empty?
+      @progress += 0.10
+    end
   end
   
   def review

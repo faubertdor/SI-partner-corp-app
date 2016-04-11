@@ -12,6 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # Use Twitter bootstrap css framework
 gem 'bootstrap-sass', '~> 3.3'
+# Progress bar wrapper
+gem 'bootstrap_progressbar', '~> 0.2.0'
 # Authentication system with Devise
 gem 'devise', '~> 3.5'
 # Omniauth allows multiple provider for quick login

@@ -5,6 +5,12 @@ class PoliticallyExposedPeopleController < ApplicationController
   # GET /politically_exposed_people.json
   def index
     @politically_exposed_people = current_user.politically_exposed_people.all
+    
+    # Set progress bar
+    @progress = 0.55
+    if !@politically_exposed_people.empty?
+      @progress += 0.20
+    end
   end
 
   # GET /politically_exposed_people/1
