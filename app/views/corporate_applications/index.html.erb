@@ -1,7 +1,5 @@
-<div class="row">
-	<h1 class="jumbotron">Save big on your foreign exchange!</h1>
-  	<% if !user_signed_in? %>
-	   <h2>To start an application <%= link_to "Register", sign_up_path %></h2>
-	   <h2>Returning users <%= link_to "Login", login_path %></h2>
-    <% end %>
-</div>
+<h1 class="jumbotron">Save big on your foreign exchange!</h1>
+<% if !user_signed_in? %>
+   <h2>To start an application <%= link_to "Register", sign_up_path %></h2>
+   <h2>Returning users <%= link_to "Login", login_path %></h2>
+<% end %>

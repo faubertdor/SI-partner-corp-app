@@ -1,9 +1,9 @@
 <h1 class="jumbotron">Review the Complete Application</h1>
 <%= render 'corporate_applications/review_application' %>
-<table class="table table-striped table-bordered">
+<table class="table">
 	<tr>
 		<td><%= link_to "Back", new_fx_and_payment_path, class: "btn btn-primary" %></td>
-		<td>
+		<td class="pull-right">
 			<%= link_to "Submit Corporate Application", corporate_applications_submit_path,
 	           			method: :post, class: "btn btn-primary" %>
 		</td>
