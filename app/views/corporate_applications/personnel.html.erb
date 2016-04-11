@@ -1,6 +1,6 @@
+<%= render 'nav_corp' %>
 <h2 class="jumbotron">Part II - Corporate Personnel</h2>
 <%= render 'authorized_representatives' %>
 <%= render 'beneficial_owners' %>
 <%= render 'officers' %>
-<%= link_to "Back", general_info_path(current_user.general_info), class: "btn btn-primary" %>
-<%= link_to "Next", politically_exposed_people_path, class: "btn btn-primary" %>
+<%= render 'nav_corp' %>
