@@ -1,10 +1,4 @@
-<div class="row">
-	<h2 class="jumbotron">Part I - General Information</h2>
-</div>
+<h2 class="jumbotron">Part I - General Information</h2>
 <%= render 'general_infos/infos' %>
-<div class="row">
-	<p>
-		<%= link_to 'Edit', edit_general_info_path(@general_info), class: "btn btn-primary" %>
-	 	<%= link_to 'Next', corporate_applications_personnel_path, class: "btn btn-primary" %>
-	</p>
-</div>
+<%= link_to 'Edit', edit_general_info_path(@general_info), class: "btn btn-primary" %>
+<%= link_to 'Next', corporate_applications_personnel_path, class: "btn btn-primary" %>

@@ -32,7 +32,7 @@ class CorporateApplicationsController < ApplicationController
     # Test code below
     #save_path = Rails.root.join('.','filename.pdf')
     #File.open(save_path, 'wb') do |file|
-     # file << pdf
+    #  file << pdf
     #end
     @user = User.find_by(id: current_user.id)
     @user.is_app_complete = true
