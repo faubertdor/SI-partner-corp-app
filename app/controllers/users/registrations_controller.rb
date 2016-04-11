@@ -23,9 +23,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user = User.find_by(id: current_user.id)
+    if @user.update_without_password(user_params)
+      redirect_to root_url
+    else
+      render 'edit'
+    end
+  end
 
   # DELETE /resource
   # def destroy

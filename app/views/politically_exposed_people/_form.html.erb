@@ -20,11 +20,11 @@
     <div class="row">
       <div class="col-md-6">
         <%= f.label :from %><br>
-        <%= f.date_select :from, class: "form-control" %>
+        <%= f.date_select :from, class: "form-control", start_year: 1920 %>
       </div>
       <div class="col-md-6">
         <%= f.label :to %><br>
-        <%= f.date_select :to, class: "form-control" %>
+        <%= f.date_select :to, class: "form-control", start_year: 1920 %>
       </div>
     </div>
     
