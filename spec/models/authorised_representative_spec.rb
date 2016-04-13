@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe AuthorizedRepresentative, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before(:all) do
+		@auth_rep = AuthorizedRepresentative.new
+	end
+
+	it "should not be valid when empty" do
+		expect(@auth_rep.valid?).to be_falsey
+	end
 end

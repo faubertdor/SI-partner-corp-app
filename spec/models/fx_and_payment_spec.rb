@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe FxAndPayment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before(:all) do 
+		@fx = FxAndPayment.new
+	end
+
+	it "should not be valid when empty" do
+		expect(@fx.valid?).to be_falsey
+	end
 end
