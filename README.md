@@ -16,3 +16,6 @@ Production data base PostgreSQL but can used in develpment environment with SQLi
 Production Server is Puma but the default web server WEBrick in local.
 
 Run rake db:schema:load to load database schema.
+
+Link: http://peoplehedge-customer-app.herokuapp.com/
+
