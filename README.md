@@ -13,6 +13,6 @@ Rails v4.2.5
 
 Production data base PostgreSQL but can used in develpment environment with SQLite3.
 
-Production Server is Puma but the default.
+Production Server is Puma but the default web server WEBrick in local.
 
 Run rake db:schema:load to load database schema.
